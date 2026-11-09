@@ -33,7 +33,12 @@ npm run dev -- "$HOME/obs 2025-04-13/obs-2025-04-13" [--watch]   # build + insta
 Then: Settings → Appearance → Themes → **Enough Light**; Settings → Style Settings → Enough Light.
 
 **Fonts:** the bundled fonts only show if Settings → Appearance → *Text font* and *Interface font* are
-empty (those fields override any theme). **Other devices:** Obsidian Sync → enable *Active community theme*
+empty (those fields override any theme). **Your own fonts on iPhone/iPad:** Obsidian on iOS can't use fonts installed on the phone, and Sync copies
+font *names*, not files. `scripts/personal-fonts.sh "<vault>"` embeds the fonts your Appearance settings use
+into a vault snippet (`enough-light-sean-fonts`); turn it on under Appearance → CSS snippets. The output stays
+in your vault and is never committed (Berkeley Mono is a personal licence).
+
+**Other devices:** Obsidian Sync → enable *Active community theme*
 and *Installed community themes* on each device.
 
 Fonts are SIL Open Font License — see `fonts/licenses/`.
