@@ -8,7 +8,7 @@ Enabled snippets before install → after:
 | Snippet | Overrides | With Enough Light |
 |---|---|---|
 | `ntb-cyan-glow` | toolbar colours + glow; Today button gradient/border/glow | **Turned off** (design §12, colour-only, built in). |
-| `sodium` | Wasp companion: dark backgrounds, text and **H1–H6 colours** (`.theme-dark`, 47 colour literals) | **Still on — Sean to decide.** Enough Light's selectors are more specific, so its palette wins for the variables it sets; Sodium still fills any variable the theme leaves alone, which breaks "say it once" and isn't covered by the contrast test. |
+| `sodium` | Wasp companion: dark backgrounds, text and **H1–H6 colours** (`.theme-dark`, 47 colour literals) | **Turned off** (Sean, 2026-11-08). It filled `--nav-item-color-active` with near-black (unreadable selected tab, fixed in v0.02 by the theme owning that variable) and draws a yellow bar beside headings that no theme variable can block. |
 | `hide-properties-panel`, `supercharged-links-gen`, `tolerance-table` | — | Listed as enabled but the files don't exist; no effect. |
 
 Present but not enabled: CyanVoxel's General Tweaks, Daily Note Outline, Frontmatter/Table tweaks, Compact
