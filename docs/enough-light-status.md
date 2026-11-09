@@ -36,3 +36,11 @@ nothing he selected disappeared. Installed in the live vault.
 - iPhone "fonts not installed": Appearance names Mac-only fonts. `scripts/personal-fonts.sh "<vault>"` writes
   the `enough-light-sean-fonts` snippet (568 KB). Sean must turn it on (Appearance → CSS snippets).
 - Vault `appearance.json` shows `ntb-cyan-glow` and `sodium` enabled again (Sync likely restored them).
+
+## Sharing — parked by Sean (2026-11-08, "not yet")
+Repo stays private. When Sean wants to share, do a "share-ready" pass first, then publish:
+- MIT licence; switch to x.y.z versions (`1.0.0`); GitHub release per version with `theme.css` + `manifest.json`.
+- Today-button rule targets Sean's own Note Toolbar button id → make it a Style Settings option or drop it.
+- README: remove personal vault path / Berkeley mention. Size 531 KB (fonts) is allowed but heavy.
+- Then: make repo public → friends install via BRAT → after ~a week, PR to `obsidianmd/obsidian-releases`
+  (`community-css-themes.json`). Making public and submitting each need Sean's go.
