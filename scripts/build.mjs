@@ -36,7 +36,7 @@ export function settingsBlock() {
 }
 
 // ---------- Palette variables ----------
-function paletteVars(p) {
+export function paletteVars(p) {
   const skip = new Set(['id', 'name', 'mode', 'isDefault', 'ombre', 'glow']);
   const lines = Object.entries(p)
     .filter(([k]) => !skip.has(k))
