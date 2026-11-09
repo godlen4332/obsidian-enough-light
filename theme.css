@@ -1,4 +1,4 @@
-/* Enough Light 0.03 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
+/* Enough Light 0.04 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
 
 /* @settings
 name: Enough Light
@@ -21,6 +21,8 @@ settings:
         value: el-light-slate
       - label: Sage
         value: el-light-sage
+      - label: Daylight
+        value: el-light-daylight
   - id: el-dark-palette
     title: Dark palette
     type: class-select
@@ -417,6 +419,33 @@ body.theme-light.el-light-sage {
   --el-toolbar-text: #24301f;
   --el-today: #8a3f16;
   --el-on-accent: #f0f3ea;
+  --el-glow: 0.3;
+}
+
+/* Daylight (light) */
+body.theme-light.el-light-daylight {
+  --el-bg: #ffffff;
+  --el-bg2: #f3f4f6;
+  --el-text: #1f2328;
+  --el-muted: #59606b;
+  --el-border: #dfe2e7;
+  --el-h1: #08695f;
+  --el-h2: #a3289e;
+  --el-h3: #2559c7;
+  --el-h4: #7d5200;
+  --el-h5: #3d434b;
+  --el-h6: #59606b;
+  --el-link: #2559c7;
+  --el-accent: #2559c7;
+  --el-tag-bg: #f3e3f2;
+  --el-tag-fg: #8a2386;
+  --el-callout-bg: #f1f3f6;
+  --el-code-bg: #f3f4f6;
+  --el-selection: #d6e4fb;
+  --el-toolbar: #e8f3f1;
+  --el-toolbar-text: #0b3e38;
+  --el-today: #a3289e;
+  --el-on-accent: #ffffff;
   --el-glow: 0.3;
 }
 

@@ -2,7 +2,7 @@
 
 A calm, legible Obsidian theme. Enough light to read by, nothing more.
 
-- **Six palettes:** light Honey · Slate · Sage; dark Arcane · Deep Sea · Ember.
+- **Seven palettes:** light Honey · Slate · Sage · Daylight; dark Arcane · Deep Sea · Ember.
 - **Optional effects:** heading glow (all palettes), ombre page fade and gradient headings (dark).
 - **Per-heading controls** (H1–H6 colour, size, font, weight) and **four bundled font pairings** via the
   [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.

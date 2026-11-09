@@ -52,6 +52,16 @@ export const PALETTES = [
     glow: 0.3,
   },
 
+  {
+    // Bright white paper; Arcane's teal, magenta, blue by day.
+    id: 'daylight', name: 'Daylight', mode: 'light', isDefault: false,
+    bg: '#ffffff', bg2: '#f3f4f6', text: '#1f2328', muted: '#59606b', border: '#dfe2e7',
+    h1: '#08695f', h2: '#a3289e', h3: '#2559c7', h4: '#7d5200', h5: '#3d434b', h6: '#59606b',
+    link: '#2559c7', accent: '#2559c7',
+    tagBg: '#f3e3f2', tagFg: '#8a2386', calloutBg: '#f1f3f6', codeBg: '#f3f4f6', selection: '#d6e4fb',
+    toolbar: '#e8f3f1', toolbarText: '#0b3e38', today: '#a3289e',
+    glow: 0.3,
+  },
   // ---------- DARK ----------
   {
     id: 'arcane', name: 'Arcane', mode: 'dark', isDefault: true,

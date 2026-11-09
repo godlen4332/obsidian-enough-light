@@ -1,6 +1,6 @@
 # Enough Light — status / resume point
 
-**Updated:** 2026-11-08 19:25 PT · **Version:** v0.03 (`master`, pushed) · tests 28/28
+**Updated:** 2026-11-08 19:30 PT · **Version:** v0.04 (`master`, pushed) · tests 29/29
 
 ## Where things are
 - Live vault: `~/obs 2025-04-13/obs-2025-04-13` (NOT `~/Documents/obsidian-SRC` — that one was touched by
@@ -14,8 +14,8 @@
 ## v0.03 (2026-11-08) — light palettes spread out
 Sean approved ("those color ideas look great. make it so"). Light palettes are now **Honey** (warm yellow),
 **Slate** (cool blue-grey; navy/plum/teal) and **Sage** (soft green; forest/terracotta/indigo), replacing
-Parchment & Ink and Sunlit. **Daylight** (bright white, Arcane's colours) was not chosen; its values stay in
-`docs/proposals/enough-light-light-palettes-2026-11-08.mjs` if wanted later. Sean's saved choice is Honey, so
+Parchment & Ink and Sunlit. v0.04: Sean said "keep all 4", so **Daylight** (bright white, Arcane's colours by day) is the fourth light
+palette. Now 7 palettes: 4 light, 3 dark (count test updated). Sean's saved choice is Honey, so
 nothing he selected disappeared. Installed in the live vault.
 
 ## How to change a palette

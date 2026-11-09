@@ -42,6 +42,7 @@ hue family is the decision, not the exact hex.**
 | Light | **Honey** (default light; Maple's look, distinct headings) | `#faf6ec` | `#3b3226` | rust `#7a3a10` | amber `#7d5608` | olive `#4d5c20` | `#a0521d`, toolbar band `#e3c677` |
 | Light | **Slate** (cool blue-grey; replaced Parchment & Ink 2026-11-08, too close to Honey) | `#eef1f4` | `#22282f` | navy `#1d4a7a` | plum `#6a3f8f` | teal `#1f6159` | `#1d5b96`, accent `#2a63a8` |
 | Light | **Sage** (soft green; replaced Sunlit 2026-11-08) | `#f0f3ea` | `#283026` | forest `#2f5a2a` | terracotta `#8a3f16` | indigo `#3a4f86` | `#2f6a4a`, accent `#3d7044` |
+| Light | **Daylight** (bright white; Arcane's colours by day; added 2026-11-08) | `#ffffff` | `#1f2328` | teal `#08695f` | magenta `#a3289e` | blue `#2559c7` | `#2559c7` |
 | Dark | **Arcane** (default dark; MagicUser look) | `#161512` | `#e6e1d6` | teal `#5fd3c4` | magenta `#cf6fd6` | blue `#6aa8ff` | `#6aa8ff`, rule `#2f6fd0` |
 | Dark | **Deep Sea** (ombre) | fade `#0c1424`→`#1a1735` | `#dde6f2` | gradient `#7cc4ff`→`#8f7dff` | gradient `#5fd3c4`→`#6aa8ff` | lilac `#b9a8ff` | `#7cc4ff` |
 | Dark | **Ember** (dark twin of Honey) | `#18181a` | `#ece4d6` | gold `#f0c46a` | copper `#e48a5c` | sky `#6fb0e0` | `#f0c46a` |

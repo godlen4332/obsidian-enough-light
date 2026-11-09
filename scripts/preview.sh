@@ -14,7 +14,7 @@ page(){ # name, iframes…
   local name=$1; shift
   { echo '<!doctype html><style>body{margin:0;background:#888;display:flex;flex-wrap:wrap;gap:6px;padding:6px;align-items:flex-start}iframe{height:1200px;border:0}</style>'; printf '%s\n' "$@"; } > "preview/$name.html"
 }
-page palettes "$(f light el-light-honey Honey)" "$(f light el-light-slate Slate)" "$(f light el-light-sage Sage)" \
+page palettes "$(f light el-light-honey Honey)" "$(f light el-light-slate Slate)" "$(f light el-light-sage Sage)" "$(f light el-light-daylight Daylight)" \
               "$(f dark el-dark-arcane Arcane)" "$(f dark el-dark-deepsea,el-ombre-page,el-ombre-headings 'Deep Sea + ombre')" "$(f dark el-dark-ember Ember)"
 page variants "$(f dark el-dark-arcane,el-glow-off 'Arcane, glow off')" "$(f dark el-dark-ember,el-fonts-b 'Ember, fonts B')" \
               "$(f light el-light-honey,is-phone,is-mobile 'Honey phone' 390)" "$(f dark el-dark-arcane,el-fonts-d,is-phone,is-mobile 'Arcane phone, fonts D' 390)"

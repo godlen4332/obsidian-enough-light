@@ -11,12 +11,12 @@ test('contrast() matches known WCAG values', () => {
   assert.equal(contrast('#767676', '#ffffff').toFixed(2), '4.54');
 });
 
-test('six palettes, three per mode, unique ids', () => {
-  assert.equal(PALETTES.length, 6);
-  for (const mode of ['light', 'dark']) {
-    assert.equal(PALETTES.filter(p => p.mode === mode).length, 3, mode);
-  }
-  assert.equal(new Set(PALETTES.map(p => p.id)).size, 6);
+// Sean, 2026-11-08: four light palettes (Honey, Slate, Sage, Daylight), three dark.
+test('seven palettes, four light and three dark, unique ids', () => {
+  assert.equal(PALETTES.length, 7);
+  assert.equal(PALETTES.filter(p => p.mode === 'light').length, 4, 'light');
+  assert.equal(PALETTES.filter(p => p.mode === 'dark').length, 3, 'dark');
+  assert.equal(new Set(PALETTES.map(p => p.id)).size, 7);
 });
 
 test('exactly one default per mode: Honey (light), Arcane (dark)', () => {
