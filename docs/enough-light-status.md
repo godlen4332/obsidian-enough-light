@@ -1,6 +1,6 @@
 # Enough Light — status / resume point
 
-**Updated:** 2026-11-08 19:20 PT · **Version:** v0.02 (`master`, pushed) · tests 28/28
+**Updated:** 2026-11-08 19:25 PT · **Version:** v0.03 (`master`, pushed) · tests 28/28
 
 ## Where things are
 - Live vault: `~/obs 2025-04-13/obs-2025-04-13` (NOT `~/Documents/obsidian-SRC` — that one was touched by
@@ -11,18 +11,18 @@
   nav/hover/focus/icon colours (regression test).
 - Sean confirmed "better" after reload.
 
-## Open — waiting on Sean
-**Light palettes too similar.** Proposal (rendered `preview/out/light-proposal.png`, all pass the test):
-keep **Honey** (warm yellow); replace Parchment & Ink → **Slate** (cool blue-grey paper; navy/plum/teal);
-replace Sunlit → **Sage** (soft green paper; forest/terracotta/indigo); alternative third: **Daylight**
-(bright white; teal/magenta/blue = Arcane by day). Values: `docs/proposals/enough-light-light-palettes-2026-11-08.mjs`.
-Question to Sean: which three light palettes?
+## v0.03 (2026-11-08) — light palettes spread out
+Sean approved ("those color ideas look great. make it so"). Light palettes are now **Honey** (warm yellow),
+**Slate** (cool blue-grey; navy/plum/teal) and **Sage** (soft green; forest/terracotta/indigo), replacing
+Parchment & Ink and Sunlit. **Daylight** (bright white, Arcane's colours) was not chosen; its values stay in
+`docs/proposals/enough-light-light-palettes-2026-11-08.mjs` if wanted later. Sean's saved choice is Honey, so
+nothing he selected disappeared. Installed in the live vault.
 
-## To apply the answer
-1. Edit `src/palettes.mjs` (ids change → also Style Settings options regenerate automatically).
+## How to change a palette
+1. Edit `src/palettes.mjs` (Style Settings options regenerate automatically).
 2. `npm test` → `./scripts/preview.sh` → look at `preview/out/palettes.png`.
 3. Bump version 0.01, `npm run dev -- "<live vault>"`, commit, tag, push. Tell Sean to reload if needed.
-4. If an old palette id is removed and Sean had selected it, Style Settings falls back to the default.
+4. A removed palette id that Sean had selected falls back to the mode's default.
 
 ## Not done yet
 - Never seen on iPhone/iPad (Obsidian Sync: enable "Installed community themes" + "Active community theme").

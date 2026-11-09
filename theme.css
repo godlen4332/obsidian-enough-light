@@ -1,4 +1,4 @@
-/* Enough Light 0.02 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
+/* Enough Light 0.03 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
 
 /* @settings
 name: Enough Light
@@ -17,10 +17,10 @@ settings:
     options:
       - label: Honey
         value: el-light-honey
-      - label: 'Parchment & Ink'
-        value: el-light-ink
-      - label: Sunlit
-        value: el-light-sunlit
+      - label: Slate
+        value: el-light-slate
+      - label: Sage
+        value: el-light-sage
   - id: el-dark-palette
     title: Dark palette
     type: class-select
@@ -366,58 +366,58 @@ body.theme-light.el-light-honey {
   --el-glow: 0.35;
 }
 
-/* Parchment & Ink (light) */
-body.theme-light.el-light-ink {
-  --el-bg: #f7f1e1;
-  --el-bg2: #eee6d1;
-  --el-text: #2e2a24;
-  --el-muted: #5f584c;
-  --el-border: #ddd2b8;
-  --el-h1: #1f4e79;
-  --el-h2: #1a5c5a;
-  --el-h3: #8a4517;
-  --el-h4: #3d5a73;
-  --el-h5: #4a4a40;
-  --el-h6: #5f584c;
-  --el-link: #1a5d92;
-  --el-accent: #1a5c5a;
-  --el-tag-bg: #e2ebf1;
-  --el-tag-fg: #1f4e79;
-  --el-callout-bg: #ece5cf;
-  --el-code-bg: #ece5d2;
-  --el-selection: #cfe0ea;
-  --el-toolbar: #e8dcb5;
-  --el-toolbar-text: #2e2a24;
-  --el-today: #1f4e79;
-  --el-on-accent: #f7f1e1;
+/* Slate (light) */
+body.theme-light.el-light-slate {
+  --el-bg: #eef1f4;
+  --el-bg2: #e3e8ee;
+  --el-text: #22282f;
+  --el-muted: #545e6a;
+  --el-border: #cfd6de;
+  --el-h1: #1d4a7a;
+  --el-h2: #6a3f8f;
+  --el-h3: #1f6159;
+  --el-h4: #7a4a12;
+  --el-h5: #3e4650;
+  --el-h6: #4c5560;
+  --el-link: #1d5b96;
+  --el-accent: #2a63a8;
+  --el-tag-bg: #dde6f0;
+  --el-tag-fg: #1d4a7a;
+  --el-callout-bg: #e2e8ef;
+  --el-code-bg: #e4e9ef;
+  --el-selection: #c9d8ea;
+  --el-toolbar: #d6dee8;
+  --el-toolbar-text: #1d2a3a;
+  --el-today: #1d4a7a;
+  --el-on-accent: #eef1f4;
   --el-glow: 0.25;
 }
 
-/* Sunlit (light) */
-body.theme-light.el-light-sunlit {
-  --el-bg: #fffaf0;
-  --el-bg2: #f7efdc;
-  --el-text: #33302a;
-  --el-muted: #625b4e;
-  --el-border: #eadfc6;
-  --el-h1: #9c4316;
-  --el-h2: #6e4492;
-  --el-h3: #1f6457;
-  --el-h4: #7a4e0c;
-  --el-h5: #504a40;
-  --el-h6: #625b4e;
-  --el-link: #9c4316;
-  --el-accent: #94600a;
-  --el-tag-bg: #f6e3f5;
-  --el-tag-fg: #6e4592;
-  --el-callout-bg: #fdf1d6;
-  --el-code-bg: #f7efde;
-  --el-selection: #fbe2a8;
-  --el-toolbar: #f4d58a;
-  --el-toolbar-text: #3a2f12;
-  --el-today: #9c4316;
-  --el-on-accent: #fffaf0;
-  --el-glow: 0.35;
+/* Sage (light) */
+body.theme-light.el-light-sage {
+  --el-bg: #f0f3ea;
+  --el-bg2: #e5eadc;
+  --el-text: #283026;
+  --el-muted: #556050;
+  --el-border: #d3dac6;
+  --el-h1: #2f5a2a;
+  --el-h2: #8a3f16;
+  --el-h3: #3a4f86;
+  --el-h4: #6a5410;
+  --el-h5: #3f473c;
+  --el-h6: #4d5848;
+  --el-link: #2f6a4a;
+  --el-accent: #3d7044;
+  --el-tag-bg: #dfe8d3;
+  --el-tag-fg: #2f5a2a;
+  --el-callout-bg: #e5ebdb;
+  --el-code-bg: #e7ecdf;
+  --el-selection: #d2e2c0;
+  --el-toolbar: #d5e0c4;
+  --el-toolbar-text: #24301f;
+  --el-today: #8a3f16;
+  --el-on-accent: #f0f3ea;
+  --el-glow: 0.3;
 }
 
 /* Arcane (dark, default) */

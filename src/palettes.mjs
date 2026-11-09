@@ -32,22 +32,24 @@ export const PALETTES = [
     glow: 0.35,
   },
   {
-    id: 'ink', name: 'Parchment & Ink', mode: 'light', isDefault: false,
-    bg: '#f7f1e1', bg2: '#eee6d1', text: '#2e2a24', muted: '#5f584c', border: '#ddd2b8',
-    h1: '#1f4e79', h2: '#1a5c5a', h3: '#8a4517', h4: '#3d5a73', h5: '#4a4a40', h6: '#5f584c',
-    link: '#1a5d92', accent: '#1a5c5a',
-    tagBg: '#e2ebf1', tagFg: '#1f4e79', calloutBg: '#ece5cf', codeBg: '#ece5d2', selection: '#cfe0ea',
-    toolbar: '#e8dcb5', toolbarText: '#2e2a24', today: '#1f4e79',
+    // Cool blue-grey paper; navy, plum, teal headings.
+    id: 'slate', name: 'Slate', mode: 'light', isDefault: false,
+    bg: '#eef1f4', bg2: '#e3e8ee', text: '#22282f', muted: '#545e6a', border: '#cfd6de',
+    h1: '#1d4a7a', h2: '#6a3f8f', h3: '#1f6159', h4: '#7a4a12', h5: '#3e4650', h6: '#4c5560',
+    link: '#1d5b96', accent: '#2a63a8',
+    tagBg: '#dde6f0', tagFg: '#1d4a7a', calloutBg: '#e2e8ef', codeBg: '#e4e9ef', selection: '#c9d8ea',
+    toolbar: '#d6dee8', toolbarText: '#1d2a3a', today: '#1d4a7a',
     glow: 0.25,
   },
   {
-    id: 'sunlit', name: 'Sunlit', mode: 'light', isDefault: false,
-    bg: '#fffaf0', bg2: '#f7efdc', text: '#33302a', muted: '#625b4e', border: '#eadfc6',
-    h1: '#9c4316', h2: '#6e4492', h3: '#1f6457', h4: '#7a4e0c', h5: '#504a40', h6: '#625b4e',
-    link: '#9c4316', accent: '#94600a',
-    tagBg: '#f6e3f5', tagFg: '#6e4592', calloutBg: '#fdf1d6', codeBg: '#f7efde', selection: '#fbe2a8',
-    toolbar: '#f4d58a', toolbarText: '#3a2f12', today: '#9c4316',
-    glow: 0.35,
+    // Soft green paper; forest, terracotta, indigo headings.
+    id: 'sage', name: 'Sage', mode: 'light', isDefault: false,
+    bg: '#f0f3ea', bg2: '#e5eadc', text: '#283026', muted: '#556050', border: '#d3dac6',
+    h1: '#2f5a2a', h2: '#8a3f16', h3: '#3a4f86', h4: '#6a5410', h5: '#3f473c', h6: '#4d5848',
+    link: '#2f6a4a', accent: '#3d7044',
+    tagBg: '#dfe8d3', tagFg: '#2f5a2a', calloutBg: '#e5ebdb', codeBg: '#e7ecdf', selection: '#d2e2c0',
+    toolbar: '#d5e0c4', toolbarText: '#24301f', today: '#8a3f16',
+    glow: 0.3,
   },
 
   // ---------- DARK ----------
