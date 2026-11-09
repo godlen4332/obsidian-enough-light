@@ -1,0 +1,52 @@
+/* ==========================================================================
+   50 · Components — say it once: each element gets ONE signal (a tint, or a
+   colour, or a rule), never border + shadow + tint together.
+   ========================================================================== */
+
+/* Callouts: tint only, no border. Title text in the normal text colour so it
+   always clears the bar; the icon keeps the callout's type colour. */
+body {
+  --callout-border-width: 0;
+  --callout-radius: 6px;
+}
+.callout { background-color: var(--el-callout-bg); }
+.callout .callout-title-inner { color: var(--el-text); }
+
+/* Properties: labels muted, values normal — the commonest legibility failure. */
+.metadata-property-key-input,
+.metadata-property-key { color: var(--el-muted); }
+.metadata-property-value .metadata-input-longtext:empty::before,
+.metadata-property-value input::placeholder { color: var(--el-muted); opacity: 1; }
+
+/* Breadcrumbs / view header title. */
+.view-header-breadcrumb,
+.view-header-title-parent { color: var(--el-muted); }
+
+/* Active tab: one signal — the accent underline. */
+.workspace-tab-header.is-active { box-shadow: inset 0 -2px 0 var(--el-accent); }
+
+/* Bases and table views: header in muted, body in normal. */
+.bases-thead, .bases-th { color: var(--el-muted); }
+
+/* Code blocks: tint only. */
+.markdown-rendered pre, .HyperMD-codeblock { background-color: var(--el-code-bg); }
+
+/* --- Note Toolbar plugin (replaces the ntb-cyan-glow snippet; design §12).
+   The band is the palette's toolbar colour; buttons are plain; hover is a
+   colour change only — no glow, no extra border. --- */
+.callout[data-callout="note-toolbar"] {
+  background-color: var(--el-toolbar);
+  --cg-nt-item-text-color: var(--el-toolbar-text);
+  --cg-nt-item-text-color-hover: var(--el-toolbar-text);
+  --cg-nt-item-bg-color-hover: var(--el-bg);
+  --cg-nt-item-button-bg-color: transparent;
+}
+.callout[data-callout="note-toolbar"] .note-toolbar-button:hover,
+.callout[data-callout="note-toolbar"] .clickable-icon:hover { filter: none; box-shadow: none; }
+
+/* Sean's "Today" button (daily toolbar). ONE signal: the palette's gold/accent
+   colour. No gradient, no border, no outer glow. */
+.note-toolbar-button[data-ntb-uuid="11963eca-620e-43d6-acb5-9c3363df402c"],
+.note-toolbar-button[data-ntb-uuid="11963eca-620e-43d6-acb5-9c3363df402c"] * {
+  color: var(--el-today);
+}

@@ -15,6 +15,11 @@ export function contrast(a, b) {
   return (hi + 0.05) / (lo + 0.05);
 }
 
+/** Text colour used on accent-filled buttons: whichever of text/bg reads better. */
+export function onAccent(p) {
+  return contrast(p.text, p.accent) >= contrast(p.bg, p.accent) ? p.text : p.bg;
+}
+
 export const BAR = { body: 7, heading: 5.5, text: 4.5, ui: 3 };
 
 /** Headings H1–H6 aim higher than the 4.5 floor (design §5 target). */
@@ -42,8 +47,10 @@ export function failures(p) {
   check('text/calloutBg', p.text, p.calloutBg, BAR.body);
   check('text/codeBg', p.text, p.codeBg, BAR.body);
   check('text/selection', p.text, p.selection, BAR.text);
+  check('onAccent/accent', onAccent(p), p.accent, BAR.text);
   check('tagFg/tagBg', p.tagFg, p.tagBg, BAR.text);
   check('toolbarText/toolbar', p.toolbarText, p.toolbar, BAR.text);
+  check('today/toolbar', p.today, p.toolbar, BAR.text);
   if (p.ombre) {
     // Worst case: each heading gradient end against each end of the page fade,
     // plus body text against the fade end it did not start from.

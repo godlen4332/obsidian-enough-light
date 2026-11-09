@@ -1,0 +1,27 @@
+/* ==========================================================================
+   20 · Typography — font pairings (design §6). Pairing A is the default and
+   needs no class, so the theme reads correctly without Style Settings.
+   Obsidian's own Appearance font fields still win if Sean fills them in.
+   ========================================================================== */
+body {
+  --el-font-heading: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --el-font-body: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+}
+body.el-fonts-b {
+  --el-font-heading: "Poppins", system-ui, sans-serif;
+  --el-font-body: "JetBrains Mono", ui-monospace, monospace;
+}
+body.el-fonts-c {
+  --el-font-heading: "Inter", system-ui, sans-serif;
+  --el-font-body: "IBM Plex Mono", ui-monospace, monospace;
+}
+body.el-fonts-d {
+  --el-font-heading: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --el-font-body: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+}
+body {
+  --font-text-theme: var(--el-font-body);
+  --font-interface-theme: var(--el-font-heading);
+  --font-monospace-theme: var(--el-font-body);
+  --line-height-normal: 1.6;
+}

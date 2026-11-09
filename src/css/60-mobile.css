@@ -1,0 +1,6 @@
+/* ==========================================================================
+   60 · Phone — the big heading steps shrink a little so an H1 doesn't wrap
+   into three lines. Custom sizes from Style Settings scale the same way.
+   ========================================================================== */
+body.is-phone { --el-hscale: 0.85; }
+body.is-phone .callout[data-callout="note-toolbar"] { --cg-nt-item-font-size: 1em; }

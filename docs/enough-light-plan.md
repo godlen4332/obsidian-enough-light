@@ -51,7 +51,7 @@
 ### Task 2: CSS layers + build + Style Settings block
 
 **Files:**
-- Create: `src/css/10-base.css` (Obsidian variable mapping), `20-typography.css`, `30-headings.css`, `40-effects.css`, `50-components.css` (properties, Bases, tabs, callouts, tags, code, note-toolbar incl. Today button colour-only), `60-mobile.css`, `70-a11y.css`, `src/settings.yaml` (non-palette settings), `scripts/build.mjs`
+- Create: `src/css/10-base.css` (Obsidian variable mapping), `20-typography.css`, `30-headings.css`, `40-effects.css`, `50-components.css` (properties, Bases, tabs, callouts, tags, code, note-toolbar incl. Today button colour-only), `60-mobile.css`, `70-a11y.css`, `src/settings.mjs` (settings tree; heading sections generated from one template), `scripts/build.mjs`
 - Test: `test/build.test.mjs`
 
 **Interfaces:**

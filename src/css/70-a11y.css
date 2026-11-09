@@ -1,0 +1,15 @@
+/* ==========================================================================
+   70 · Accessibility — follow the device's own settings (design §5).
+   ========================================================================== */
+@media (prefers-contrast: more) {
+  body.theme-light, body.theme-dark {
+    --text-muted: var(--el-text);
+    --text-faint: var(--el-text);
+    --metadata-label-text-color: var(--el-text);
+  }
+  body .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
+  body :is(.HyperMD-header, .inline-title) { text-shadow: none !important; filter: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body * { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,58 @@
+/* ==========================================================================
+   40 · Effects — glow (headings only) and ombre (dark only). Design §4, §5.
+   Glow colour follows the heading's ACTUAL colour (custom or palette), at the
+   palette's strength. Letters stay solid; the glow sits behind them.
+   ========================================================================== */
+body:not(.el-glow-off) {
+  --el-glow-h1: 0 0 0.45em color-mix(in srgb, var(--h1-color) calc(var(--el-glow) * 100%), transparent);
+  --el-glow-h2: 0 0 0.45em color-mix(in srgb, var(--h2-color) calc(var(--el-glow) * 100%), transparent);
+  --el-glow-h3: 0 0 0.4em color-mix(in srgb, var(--h3-color) calc(var(--el-glow) * 100%), transparent);
+  --el-glow-h4: 0 0 0.35em color-mix(in srgb, var(--h4-color) calc(var(--el-glow) * 90%), transparent);
+  --el-glow-h5: 0 0 0.35em color-mix(in srgb, var(--h5-color) calc(var(--el-glow) * 80%), transparent);
+  --el-glow-h6: 0 0 0.35em color-mix(in srgb, var(--h6-color) calc(var(--el-glow) * 70%), transparent);
+}
+body:not(.el-glow-off) .markdown-rendered h1, body:not(.el-glow-off) .HyperMD-header-1, body:not(.el-glow-off) .inline-title { text-shadow: var(--el-glow-h1); }
+body:not(.el-glow-off) .markdown-rendered h2, body:not(.el-glow-off) .HyperMD-header-2 { text-shadow: var(--el-glow-h2); }
+body:not(.el-glow-off) .markdown-rendered h3, body:not(.el-glow-off) .HyperMD-header-3 { text-shadow: var(--el-glow-h3); }
+body:not(.el-glow-off) .markdown-rendered h4, body:not(.el-glow-off) .HyperMD-header-4 { text-shadow: var(--el-glow-h4); }
+body:not(.el-glow-off) .markdown-rendered h5, body:not(.el-glow-off) .HyperMD-header-5 { text-shadow: var(--el-glow-h5); }
+body:not(.el-glow-off) .markdown-rendered h6, body:not(.el-glow-off) .HyperMD-header-6 { text-shadow: var(--el-glow-h6); }
+
+/* --- Ombre page fade (dark only). Painted once on the non-scrolling view
+   container, so scrolling never repaints it. --- */
+body.theme-dark.el-ombre-page .workspace-leaf-content[data-type="markdown"] .view-content {
+  background: linear-gradient(180deg, var(--el-ombre-page-from), var(--el-ombre-page-to));
+}
+body.theme-dark.el-ombre-page .workspace-leaf-content[data-type="markdown"] .markdown-preview-view,
+body.theme-dark.el-ombre-page .workspace-leaf-content[data-type="markdown"] .cm-scroller,
+body.theme-dark.el-ombre-page .workspace-leaf-content[data-type="markdown"] .markdown-source-view {
+  background: transparent;
+}
+
+/* --- Ombre gradient headings (dark only). Glow must use drop-shadow here:
+   text-shadow on transparent text would glow in the transparent colour. --- */
+body.theme-dark.el-ombre-headings .markdown-rendered h1,
+body.theme-dark.el-ombre-headings .HyperMD-header-1 .cm-header-1,
+body.theme-dark.el-ombre-headings .inline-title {
+  background-image: linear-gradient(90deg, var(--el-ombre-h1-a), var(--el-ombre-h1-b));
+}
+body.theme-dark.el-ombre-headings .markdown-rendered h2,
+body.theme-dark.el-ombre-headings .HyperMD-header-2 .cm-header-2 {
+  background-image: linear-gradient(90deg, var(--el-ombre-h2-a), var(--el-ombre-h2-b));
+}
+body.theme-dark.el-ombre-headings :is(.markdown-rendered h1, .markdown-rendered h2, .HyperMD-header-1 .cm-header-1, .HyperMD-header-2 .cm-header-2, .inline-title) {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  width: fit-content;
+}
+body.theme-dark.el-ombre-headings:not(.el-glow-off) :is(.markdown-rendered h1, .HyperMD-header-1 .cm-header-1, .inline-title) {
+  filter: drop-shadow(0 0 0.35em color-mix(in srgb, var(--el-ombre-h1-a) calc(var(--el-glow) * 100%), transparent));
+}
+body.theme-dark.el-ombre-headings:not(.el-glow-off) :is(.markdown-rendered h2, .HyperMD-header-2 .cm-header-2) {
+  filter: drop-shadow(0 0 0.35em color-mix(in srgb, var(--el-ombre-h2-a) calc(var(--el-glow) * 100%), transparent));
+}
+/* The editor heading line itself carries no glow when ombre is on (the span does). */
+body.theme-dark.el-ombre-headings :is(.HyperMD-header-1, .HyperMD-header-2) { text-shadow: none; }

@@ -1,0 +1,59 @@
+/* ==========================================================================
+   10 · Base — map Obsidian's variables onto the palette (--el-*).
+   Palette values are generated from src/palettes.mjs. No colour literals here.
+   ========================================================================== */
+body.theme-light,
+body.theme-dark {
+  --background-primary: var(--el-bg);
+  --background-primary-alt: var(--el-bg2);
+  --background-secondary: var(--el-bg2);
+  --background-secondary-alt: var(--el-bg2);
+  --background-modifier-border: var(--el-border);
+  --background-modifier-border-hover: var(--el-muted);
+  --background-modifier-form-field: var(--el-bg);
+  --titlebar-background: var(--el-bg2);
+  --titlebar-background-focused: var(--el-bg2);
+  --tab-container-background: var(--el-bg2);
+  --ribbon-background: var(--el-bg2);
+
+  --text-normal: var(--el-text);
+  --text-muted: var(--el-muted);
+  /* Legibility: Obsidian's "faint" (placeholders, "Empty", hints) is too faint
+     by default. It is the same as muted here, so it clears 4.5:1. */
+  --text-faint: var(--el-muted);
+  --text-accent: var(--el-link);
+  --text-accent-hover: var(--el-link);
+  --text-selection: var(--el-selection);
+  --text-highlight-bg: var(--el-selection);
+  --text-on-accent: var(--el-on-accent);
+  --caret-color: var(--el-accent);
+
+  --color-accent: var(--el-accent);
+  --interactive-accent: var(--el-accent);
+  --interactive-accent-hover: var(--el-accent);
+  --checkbox-color: var(--el-accent);
+  --checkbox-color-hover: var(--el-accent);
+
+  --link-color: var(--el-link);
+  --link-color-hover: var(--el-link);
+  --link-external-color: var(--el-link);
+  --link-external-color-hover: var(--el-link);
+  --link-unresolved-color: var(--el-muted);
+
+  --tag-background: var(--el-tag-bg);
+  --tag-background-hover: var(--el-tag-bg);
+  --tag-color: var(--el-tag-fg);
+  --tag-color-hover: var(--el-tag-fg);
+  --tag-border-width: 0;
+
+  --code-background: var(--el-code-bg);
+  --code-normal: var(--el-text);
+  --blockquote-border-color: var(--el-accent);
+  --hr-color: var(--el-border);
+  --table-border-color: var(--el-border);
+  --metadata-label-text-color: var(--el-muted);
+  --metadata-input-text-color: var(--el-text);
+  --graph-node: var(--el-muted);
+  --graph-node-focused: var(--el-accent);
+  --graph-line: var(--el-border);
+}
