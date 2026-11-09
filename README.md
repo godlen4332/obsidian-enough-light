@@ -16,7 +16,7 @@ Design: [docs/enough-light-design.md](docs/enough-light-design.md) · Plan: [doc
 ```bash
 npm test                                    # legibility + build + font contracts
 npm run build                               # writes theme.css (≈ 530 KB, fonts embedded)
-npm run dev -- "<vault path>" [--watch]     # build + install into <vault>/.obsidian/themes/Enough Light/
+npm run dev -- "$HOME/obs 2025-04-13/obs-2025-04-13" [--watch]   # build + install (live vault)
 ./scripts/preview.sh                        # screenshots on Obsidian's real app.css → preview/out/
 ./scripts/fetch-fonts.sh                    # rebuild fonts/woff2 from google/fonts (needs uv)
 ```
