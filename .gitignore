@@ -3,3 +3,9 @@ fonts/src/
 .superpowers/
 .DS_Store
 test-vault/.obsidian/workspace*.json
+preview/.cache/
+preview/app.css
+preview/theme.css
+preview/out/
+preview/palettes.html
+preview/variants.html

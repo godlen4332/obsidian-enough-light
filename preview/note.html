@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="app.css"><link rel="stylesheet" href="theme.css">
+<script>
+const q=new URLSearchParams(location.search);
+document.documentElement.dataset.q=location.search;
+addEventListener('DOMContentLoaded',()=>{document.body.className=['theme-'+(q.get('mode')||'light'),'mod-macos','css-settings-manager','show-inline-title','show-view-header',...(q.get('cls')||'').split(',').filter(Boolean)].join(' ');document.getElementById('lbl').textContent=q.get('label')||''});
+</script>
+<style>html,body{height:100%;margin:0} .workspace-leaf-content{height:100vh} #lbl{position:fixed;right:8px;top:6px;font:12px system-ui;opacity:.7;color:var(--text-muted);z-index:9}</style>
+</head><body>
+<div id="lbl"></div>
+<div class="workspace-leaf-content" data-type="markdown">
+ <div class="view-header"><div class="view-header-title-container"><span class="view-header-breadcrumb">journal</span> / <span class="view-header-breadcrumb">Journey Logs</span> / <span class="view-header-title">Journey 2026-11-07</span></div></div>
+ <div class="view-content">
+  <div class="markdown-reading-view" style="height:100%">
+   <div class="markdown-preview-view markdown-rendered is-readable-line-width show-properties" style="padding:18px 28px">
+    <div class="markdown-preview-sizer markdown-preview-section">
+     <div class="inline-title">Journey 2026-11-07</div>
+     <div class="metadata-container" data-property-count="2"><div class="metadata-properties">
+      <div class="metadata-property"><div class="metadata-property-key"><input class="metadata-property-key-input" value="tripdate"></div><div class="metadata-property-value"><div class="metadata-input-longtext">11/07/2026</div></div></div>
+      <div class="metadata-property"><div class="metadata-property-key"><input class="metadata-property-key-input" value="people"></div><div class="metadata-property-value"><input placeholder="Empty"></div></div>
+     </div></div>
+     <div class="callout" data-callout="note-toolbar"><div class="callout-content" style="display:flex;gap:18px;padding:6px 10px">
+       <span class="note-toolbar-button" data-ntb-uuid="11963eca-620e-43d6-acb5-9c3363df402c">☀ Today</span><span class="note-toolbar-button">time</span><span class="note-toolbar-button">switch</span><span class="note-toolbar-button">search</span></div></div>
+     <h1>Set</h1>
+     <h2>What's on your mind? What pre-occupies you?</h2>
+     <p>Tomatoes liked the south wall. See <a class="internal-link">Seed list</a>. <em>Italic for a thought,</em> <strong>bold for a fact.</strong> <a class="tag">#journal</a></p>
+     <h3>Intentions</h3>
+     <div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner">Note</div></div><div class="callout-content"><p>Il1| O0o rn/m — legibility line.</p></div></div>
+     <h4>Heading four</h4><h5>Heading five</h5><h6>Heading six</h6>
+     <pre><code>const enough = "light";</code></pre>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</body></html>
