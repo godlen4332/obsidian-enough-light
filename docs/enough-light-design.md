@@ -45,7 +45,7 @@ hue family is the decision, not the exact hex.**
 | Light | **Daylight** (bright white; Arcane's colours by day; added 2026-11-08) | `#ffffff` | `#1f2328` | teal `#08695f` | magenta `#a3289e` | blue `#2559c7` | `#2559c7` |
 | Dark | **Arcane** (default dark; MagicUser look) | `#161512` | `#e6e1d6` | teal `#5fd3c4` | magenta `#cf6fd6` | blue `#6aa8ff` | `#6aa8ff`, rule `#2f6fd0` |
 | Dark | **Deep Sea** (ombre) | fade `#0c1424`→`#1a1735` | `#dde6f2` | gradient `#7cc4ff`→`#8f7dff` | gradient `#5fd3c4`→`#6aa8ff` | lilac `#b9a8ff` | `#7cc4ff` |
-| Dark | **Ember** (dark twin of Honey) | `#18181a` | `#ece4d6` | gold `#f0c46a` | copper `#e48a5c` | sky `#6fb0e0` | `#f0c46a` |
+| Dark | **Ember** (warm brown paper, no blue; reworked 2026-11-08, was too close to Arcane) | `#1f1611` | `#f0e4d2` | gold `#f2c35b` | copper `#f08a4b` | rose `#e88aa0` | `#f5b15f`, accent `#d08a2a` |
 
 \* below the bar in the mockup; must be deepened. "Ember" is already a community theme name — fine as a palette
 name inside this private theme; rename (e.g. "Hearthlight") only if it is ever published.

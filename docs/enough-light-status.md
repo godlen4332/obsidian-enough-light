@@ -1,6 +1,6 @@
 # Enough Light — status / resume point
 
-**Updated:** 2026-11-08 19:30 PT · **Version:** v0.04 (`master`, pushed) · tests 29/29
+**Updated:** 2026-11-08 19:40 PT · **Version:** v0.05 (`master`, pushed) · tests 29/29
 
 ## Where things are
 - Live vault: `~/obs 2025-04-13/obs-2025-04-13` (NOT `~/Documents/obsidian-SRC` — that one was touched by
@@ -27,3 +27,12 @@ nothing he selected disappeared. Installed in the live vault.
 ## Not done yet
 - Never seen on iPhone/iPad (Obsidian Sync: enable "Installed community themes" + "Active community theme").
 - No independent code review of the build yet (plan's final review step).
+
+## v0.05 (2026-11-08)
+- Ember reworked (Sean: "arcane and ember also look too similar"): warm brown paper, gold/copper/rose, no blue.
+- Theme-list thumbnail `cover.png` + README; `manifest.json` has `repo` + `screenshot`. They stay blank in
+  Obsidian until the repo is public (Obsidian fetches both from raw.githubusercontent.com without login).
+  **Open question for Sean: make the repo public?**
+- iPhone "fonts not installed": Appearance names Mac-only fonts. `scripts/personal-fonts.sh "<vault>"` writes
+  the `enough-light-sean-fonts` snippet (568 KB). Sean must turn it on (Appearance → CSS snippets).
+- Vault `appearance.json` shows `ntb-cyan-glow` and `sodium` enabled again (Sync likely restored them).

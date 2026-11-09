@@ -84,13 +84,14 @@ export const PALETTES = [
     ombre: { pageFrom: '#0c1424', pageTo: '#1a1735', h1: ['#7cc4ff', '#8f7dff'], h2: ['#5fd3c4', '#6aa8ff'] },
   },
   {
+    // Warm brown "embers" paper; gold, copper, rose headings, no blue (kept apart from Arcane, 2026-11-08).
     id: 'ember', name: 'Ember', mode: 'dark', isDefault: false,
-    bg: '#18181a', bg2: '#202022', text: '#ece4d6', muted: '#aaa293', border: '#36342f',
-    h1: '#f0c46a', h2: '#e48a5c', h3: '#6fb0e0', h4: '#c9a0dc', h5: '#cfc7b8', h6: '#aaa293',
-    link: '#f0c46a', accent: '#c9972f',
-    tagBg: '#33291a', tagFg: '#f0c46a', calloutBg: '#222019', codeBg: '#222124', selection: '#4a3c1e',
-    toolbar: '#202022', toolbarText: '#f0c46a', today: '#f0c46a',
+    bg: '#1f1611', bg2: '#271c15', text: '#f0e4d2', muted: '#b5a490', border: '#3d2d22',
+    h1: '#f2c35b', h2: '#f08a4b', h3: '#e88aa0', h4: '#b5c97e', h5: '#d8cbb6', h6: '#b5a490',
+    link: '#f5b15f', accent: '#d08a2a',
+    tagBg: '#3a2618', tagFg: '#f2b36b', calloutBg: '#2a1d16', codeBg: '#261b15', selection: '#5a3a1c',
+    toolbar: '#2c1f16', toolbarText: '#f2c35b', today: '#f08a4b',
     glow: 0.5,
-    ombre: { pageFrom: '#18181a', pageTo: '#1b1d22', h1: ['#f0c46a', '#e48a5c'], h2: ['#e48a5c', '#6fb0e0'] },
+    ombre: { pageFrom: '#1f1611', pageTo: '#2a1410', h1: ['#f2c35b', '#f08a4b'], h2: ['#f08a4b', '#e88aa0'] },
   },
 ];

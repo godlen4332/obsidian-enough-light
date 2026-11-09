@@ -8,7 +8,7 @@ A calm, legible Obsidian theme. Enough light to read by, nothing more.
 |---|---|---|---|
 | **Honey** (default) | warm yellow paper; rust, amber, olive | **Arcane** (default) | teal, magenta, blue with a soft glow |
 | **Slate** | cool blue-grey; navy, plum, teal | **Deep Sea** | navy paper; sky, aqua, lilac; optional ombre |
-| **Sage** | soft green; forest, terracotta, indigo | **Ember** | warm dark; gold, copper |
+| **Sage** | soft green; forest, terracotta, indigo | **Ember** | warm brown; gold, copper, rose |
 | **Daylight** | bright white; Arcane's colours by day | | |
 
 - **Seven palettes:** light Honey · Slate · Sage · Daylight; dark Arcane · Deep Sea · Ember.

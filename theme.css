@@ -1,4 +1,4 @@
-/* Enough Light 0.04 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
+/* Enough Light 0.05 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
 
 /* @settings
 name: Enough Light
@@ -518,35 +518,35 @@ body.theme-dark.el-dark-deepsea {
 
 /* Ember (dark) */
 body.theme-dark.el-dark-ember {
-  --el-bg: #18181a;
-  --el-bg2: #202022;
-  --el-text: #ece4d6;
-  --el-muted: #aaa293;
-  --el-border: #36342f;
-  --el-h1: #f0c46a;
-  --el-h2: #e48a5c;
-  --el-h3: #6fb0e0;
-  --el-h4: #c9a0dc;
-  --el-h5: #cfc7b8;
-  --el-h6: #aaa293;
-  --el-link: #f0c46a;
-  --el-accent: #c9972f;
-  --el-tag-bg: #33291a;
-  --el-tag-fg: #f0c46a;
-  --el-callout-bg: #222019;
-  --el-code-bg: #222124;
-  --el-selection: #4a3c1e;
-  --el-toolbar: #202022;
-  --el-toolbar-text: #f0c46a;
-  --el-today: #f0c46a;
-  --el-on-accent: #18181a;
+  --el-bg: #1f1611;
+  --el-bg2: #271c15;
+  --el-text: #f0e4d2;
+  --el-muted: #b5a490;
+  --el-border: #3d2d22;
+  --el-h1: #f2c35b;
+  --el-h2: #f08a4b;
+  --el-h3: #e88aa0;
+  --el-h4: #b5c97e;
+  --el-h5: #d8cbb6;
+  --el-h6: #b5a490;
+  --el-link: #f5b15f;
+  --el-accent: #d08a2a;
+  --el-tag-bg: #3a2618;
+  --el-tag-fg: #f2b36b;
+  --el-callout-bg: #2a1d16;
+  --el-code-bg: #261b15;
+  --el-selection: #5a3a1c;
+  --el-toolbar: #2c1f16;
+  --el-toolbar-text: #f2c35b;
+  --el-today: #f08a4b;
+  --el-on-accent: #1f1611;
   --el-glow: 0.5;
-  --el-ombre-page-from: #18181a;
-  --el-ombre-page-to: #1b1d22;
-  --el-ombre-h1-a: #f0c46a;
-  --el-ombre-h1-b: #e48a5c;
-  --el-ombre-h2-a: #e48a5c;
-  --el-ombre-h2-b: #6fb0e0;
+  --el-ombre-page-from: #1f1611;
+  --el-ombre-page-to: #2a1410;
+  --el-ombre-h1-a: #f2c35b;
+  --el-ombre-h1-b: #f08a4b;
+  --el-ombre-h2-a: #f08a4b;
+  --el-ombre-h2-b: #e88aa0;
 }
 
 /* ==========================================================================
