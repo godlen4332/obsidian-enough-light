@@ -3,11 +3,17 @@
 <script>
 const q=new URLSearchParams(location.search);
 document.documentElement.dataset.q=location.search;
+if(q.get('snip')) document.write('<link rel="stylesheet" href="'+q.get('snip')+'">');
 addEventListener('DOMContentLoaded',()=>{document.body.className=['theme-'+(q.get('mode')||'light'),'mod-macos','css-settings-manager','show-inline-title','show-view-header',...(q.get('cls')||'').split(',').filter(Boolean)].join(' ');document.getElementById('lbl').textContent=q.get('label')||''});
 </script>
 <style>html,body{height:100%;margin:0} .workspace-leaf-content{height:100vh} #lbl{position:fixed;right:8px;top:6px;font:12px system-ui;opacity:.7;color:var(--text-muted);z-index:9}</style>
 </head><body>
 <div id="lbl"></div>
+<div class="nav-files-container" style="position:fixed;right:0;bottom:0;width:260px;padding:8px;background:var(--background-secondary);z-index:5">
+ <div class="tree-item nav-file"><div class="tree-item-self nav-file-title is-clickable"><div class="tree-item-inner">2026-11-08</div></div></div>
+ <div class="tree-item nav-file"><div class="tree-item-self nav-file-title is-clickable is-active"><div class="tree-item-inner">Journey 2026-11-08 (active)</div></div></div>
+ <div class="tree-item nav-file"><div class="tree-item-self nav-file-title is-clickable is-selected"><div class="tree-item-inner">Journeys base (selected)</div></div></div>
+</div>
 <div class="workspace-leaf-content" data-type="markdown">
  <div class="view-header"><div class="view-header-title-container"><span class="view-header-breadcrumb">journal</span> / <span class="view-header-breadcrumb">Journey Logs</span> / <span class="view-header-title">Journey 2026-11-07</span></div></div>
  <div class="view-content">

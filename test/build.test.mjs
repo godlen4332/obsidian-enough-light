@@ -61,3 +61,19 @@ test('every heading level has a section with colour, size, font and weight setti
     }
   }
 });
+
+// Regression (2026-11-08, Sean's screenshot): the selected tab in the sidebar was
+// unreadable because the theme left --nav-item-color-active unset and a snippet
+// (sodium) filled it with near-black. The theme must own every colour Obsidian
+// reads for text and its backgrounds, so no snippet can leak one in.
+export const OWNED_VARS = [
+  '--nav-item-color', '--nav-item-color-hover', '--nav-item-color-active', '--nav-item-color-selected',
+  '--nav-item-background-hover', '--nav-item-background-active', '--nav-item-background-selected',
+  '--background-modifier-hover', '--background-modifier-active-hover', '--background-modifier-border-focus',
+  '--divider-color', '--indentation-guide-color', '--callout-title-color',
+  '--interactive-normal', '--interactive-hover', '--icon-color', '--icon-color-hover', '--icon-color-active',
+];
+test('theme owns every nav/hover/focus colour variable (no snippet can leak one in)', () => {
+  const base = readFileSync('src/css/10-base.css', 'utf8');
+  for (const v of OWNED_VARS) assert.match(base, new RegExp(`${v}:`), v);
+});

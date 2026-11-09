@@ -1,4 +1,4 @@
-/* Enough Light 0.01 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
+/* Enough Light 0.02 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
 
 /* @settings
 name: Enough Light
@@ -578,6 +578,28 @@ body.theme-dark {
   --graph-node: var(--el-muted);
   --graph-node-focused: var(--el-accent);
   --graph-line: var(--el-border);
+
+  /* Sidebars, file tree, tab lists (incl. Vertical Tabs). Text is always the
+     palette's text colour; the selected/active item gets ONE signal, the
+     selection tint (text on selection is contrast-tested ≥ 4.5:1). */
+  --nav-item-color: var(--el-text);
+  --nav-item-color-hover: var(--el-text);
+  --nav-item-color-active: var(--el-text);
+  --nav-item-color-selected: var(--el-text);
+  --nav-item-background-hover: var(--background-modifier-hover);
+  --nav-item-background-active: var(--el-selection);
+  --nav-item-background-selected: var(--el-selection);
+  --background-modifier-hover: color-mix(in srgb, var(--el-text) 7%, transparent);
+  --background-modifier-active-hover: color-mix(in srgb, var(--el-text) 10%, transparent);
+  --background-modifier-border-focus: var(--el-accent);
+  --divider-color: var(--el-border);
+  --indentation-guide-color: var(--el-border);
+  --callout-title-color: var(--el-text);
+  --interactive-normal: var(--el-bg2);
+  --interactive-hover: var(--el-border);
+  --icon-color: var(--el-muted);
+  --icon-color-hover: var(--el-text);
+  --icon-color-active: var(--el-text);
 }
 
 /* ==========================================================================
