@@ -1,0 +1,5 @@
+node_modules/
+fonts/src/
+.superpowers/
+.DS_Store
+test-vault/.obsidian/workspace*.json
