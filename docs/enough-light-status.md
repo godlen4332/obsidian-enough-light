@@ -67,3 +67,10 @@ Repo stays private. When Sean wants to share, do a "share-ready" pass first, the
 - Sean's Today-button UUID rule moved from the theme to his personal snippet (`personal-fonts.sh`).
 - Cover re-shot with neutral sample text (garden notes), not Sean's journal.
 - Submission is via community.obsidian.md (sign in, link GitHub, add theme), not a PR to obsidian-releases.
+
+## History scrub + submission (2026-11-25)
+- Sean submitted Enough Light at community.obsidian.md (2026-11-25); pending review (not yet in community-css-themes.json).
+- Personal line ("Solo journey…/Kate") and the old cover scrubbed from ALL history with git filter-repo; master + v0.01–v0.05 force-pushed by Sean.
+- Tag `0.0.6` re-pointed locally to 77bd44e; needs `git push --force origin 0.0.6` (Sean runs it; force-push is blocked for Claude). Until then the old history stays reachable via that tag.
+- Backup of pre-scrub history: scratchpad bundle `enough-light-before-scrub.bundle` (Mac only, temporary).
+- Berkeley Mono confirmed never committed in any version, release, or theme.css; only the vault snippet carries it (Sync → Sean's own devices).
