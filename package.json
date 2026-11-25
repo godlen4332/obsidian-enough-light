@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Enough Light — a calm, legible Obsidian theme",
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/*.test.mjs",
     "build": "node scripts/build.mjs",
     "dev": "node scripts/dev.mjs"
   }
