@@ -74,3 +74,16 @@ Repo stays private. When Sean wants to share, do a "share-ready" pass first, the
 - Tag `0.0.6` re-pointed locally to 77bd44e; needs `git push --force origin 0.0.6` (Sean runs it; force-push is blocked for Claude). Until then the old history stays reachable via that tag.
 - Backup of pre-scrub history: scratchpad bundle `enough-light-before-scrub.bundle` (Mac only, temporary).
 - Berkeley Mono confirmed never committed in any version, release, or theme.css; only the vault snippet carries it (Sync → Sean's own devices).
+
+## 0.0.7 (2026-11-25)
+
+- New Style Settings: "Use Obsidian's accent colour" (class `el-accent-obsidian`; every accent use reads
+  `--el-accent-live`; text on accent is black/white from `--accent-l`), bold/italic/highlight colours
+  (`--el-*-custom` with palette fallback), line width (drives Obsidian's `--file-line-width`).
+- H4–H6 size descriptions no longer claim to shrink on phones (`--el-hscale` covers H1–H3 only).
+- CI green at ba7ddcd; release 0.0.7 published with assets; installed in Sean's vault.
+- Not yet checked by eye in Obsidian: the accent toggle with a light accent (black text expected).
+- Open ideas from the customisation review: per-type callout colours, density, one heading-scale slider,
+  monochrome headings; possible empty `--el-hN-font` bug (untested).
+- Still pending: Sean's `git push --force origin 0.0.6` (remote tag still at pre-scrub 39f2005);
+  directory listing still awaiting Obsidian review.
