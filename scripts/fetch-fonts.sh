@@ -21,7 +21,7 @@ licence() { # dir family
   curl -fsSL "$RAW/$1/OFL.txt" -o "$LIC/$2 - OFL.txt"
 }
 emit() { # ttf family weight style
-  $FT pyftsubset "$1" --unicodes="$UNICODES" --flavor=woff2 --layout-features='*' \
+  $FT pyftsubset "$1" --unicodes="$UNICODES" --flavor=woff2 --layout-features='*' --name-IDs='*' \
     --output-file="$OUT/$2__$3__$4.woff2"
 }
 from_variable() { # dir file family style axes-extra weights...
@@ -55,6 +55,11 @@ from_static ibmplexmono 'IBMPlexMono-Regular.ttf'    'IBM Plex Mono' 400 normal
 from_static ibmplexmono 'IBMPlexMono-Bold.ttf'       'IBM Plex Mono' 700 normal
 from_static ibmplexmono 'IBMPlexMono-Italic.ttf'     'IBM Plex Mono' 400 italic
 from_static ibmplexmono 'IBMPlexMono-BoldItalic.ttf' 'IBM Plex Mono' 700 italic
+# IBM Plex Mono's OFL reserves the name "Plex", and a subset is a modified version, so the
+# embedded copy is renamed "EL Mono C" (file name AND name table). Licence fields are kept.
+for f in "$OUT"/"IBM Plex Mono__"*.woff2; do
+  $FT python scripts/rename-font.py "$f" "$OUT/EL Mono C__${f##*/IBM Plex Mono__}" "IBM Plex Mono" "EL Mono C" >/dev/null && rm "$f"
+done
 
 licence atkinsonhyperlegiblenext 'Atkinson Hyperlegible Next'
 licence atkinsonhyperlegiblemono 'Atkinson Hyperlegible Mono'

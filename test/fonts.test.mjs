@@ -10,7 +10,7 @@ export const REQUIRED_FACES = {
   'Poppins': [[400, 'normal'], [700, 'normal'], [800, 'normal']],
   'Inter': [[400, 'normal'], [700, 'normal'], [800, 'normal']],
   'JetBrains Mono': [[400, 'normal'], [700, 'normal'], [400, 'italic'], [700, 'italic']],
-  'IBM Plex Mono': [[400, 'normal'], [700, 'normal'], [400, 'italic'], [700, 'italic']],
+  'EL Mono C': [[400, 'normal'], [700, 'normal'], [400, 'italic'], [700, 'italic']],
 };
 
 const css = buildCss({ fonts: true });
@@ -31,4 +31,13 @@ test('no unexpected faces (keeps the file small)', () => {
 
 test('built theme.css stays within the size budget (≤ 1.4 MB)', () => {
   assert.ok(css.length <= 1.4 * 1024 * 1024, `${(css.length / 1024).toFixed(0)} KB`);
+});
+
+test('no embedded family uses a Reserved Font Name (IBM Plex Mono reserves "Plex")', () => {
+  assert.doesNotMatch(css, /font-family: "[^"]*Plex[^"]*"; font-weight/);
+});
+
+test('theme.css carries the OFL notice for every bundled font', () => {
+  for (const family of Object.keys(REQUIRED_FACES)) assert.match(css.slice(0, 4000), new RegExp(family), family);
+  assert.match(css.slice(0, 4000), /SIL Open Font License 1\.1/);
 });

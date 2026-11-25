@@ -45,5 +45,8 @@ woff2 "$F/FantasqueSansMNerdFontMono-Bold.ttf"    "$TMP/fan-700.woff2"
   face "Iosevka" 700 normal "$TMP/ios-700.woff2" "Iosevka Bold"
   face "FantasqueSansM Nerd Font Mono" 400 normal "$TMP/fan-400.woff2"
   face "FantasqueSansM Nerd Font Mono" 700 normal "$TMP/fan-700.woff2" "FantasqueSansM Nerd Font Mono Bold"
+  # Sean's daily-toolbar "Today" button: ONE signal, the palette's --el-today colour.
+  # Lives here, not in the public theme, because it targets one button's UUID.
+  echo '.note-toolbar-button[data-ntb-uuid="11963eca-620e-43d6-acb5-9c3363df402c"],.note-toolbar-button[data-ntb-uuid="11963eca-620e-43d6-acb5-9c3363df402c"] *{color:var(--el-today);}'
 } > "$OUT"
 ls -la "$OUT" | awk '{print $5" bytes → "$NF}'

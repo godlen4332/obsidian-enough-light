@@ -43,10 +43,3 @@ body {
 }
 .callout[data-callout="note-toolbar"] .note-toolbar-button:hover,
 .callout[data-callout="note-toolbar"] .clickable-icon:hover { filter: none; box-shadow: none; }
-
-/* Sean's "Today" button (daily toolbar). ONE signal: the palette's gold/accent
-   colour. No gradient, no border, no outer glow. */
-.note-toolbar-button[data-ntb-uuid="11963eca-620e-43d6-acb5-9c3363df402c"],
-.note-toolbar-button[data-ntb-uuid="11963eca-620e-43d6-acb5-9c3363df402c"] * {
-  color: var(--el-today);
-}

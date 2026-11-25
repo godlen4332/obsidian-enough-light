@@ -84,7 +84,7 @@ export const SETTINGS = {
       options: [
         { label: 'A — Atkinson Hyperlegible Next + Mono', value: 'el-fonts-a' },
         { label: 'B — Poppins + JetBrains Mono', value: 'el-fonts-b' },
-        { label: 'C — Inter + IBM Plex Mono', value: 'el-fonts-c' },
+        { label: 'C — Inter + EL Mono C (IBM Plex Mono, renamed)', value: 'el-fonts-c' },
         { label: 'D — Atkinson Hyperlegible Next (both)', value: 'el-fonts-d' },
       ],
     },

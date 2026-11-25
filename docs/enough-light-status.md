@@ -55,3 +55,15 @@ Repo stays private. When Sean wants to share, do a "share-ready" pass first, the
 - iPad: turn on the two Sync switches (above); report back if the theme still doesn't appear.
 - Turn on `enough-light-sean-fonts`; turn `sodium` and `ntb-cyan-glow` back off.
 - Sharing still parked; independent review of the build not done.
+
+## Store-ready (2026-11-25, v0.0.6)
+- Sean OK'd going public and submitting (2026-11-25).
+- Version is now semver (`0.0.6` = old "0.06"); the release tag must equal it exactly, no `v`.
+- Added `LICENSE` (MIT; fonts stay OFL), a font licence header inside theme.css, `test/manifest.test.mjs`
+  and `.github/workflows/test.yml` (tests run on GitHub: no tests on Sean's Mac).
+- IBM Plex Mono reserves the name "Plex", so the subset copy is renamed **EL Mono C** (file and name table,
+  `scripts/rename-font.py`); a real installed IBM Plex Mono still wins via the font stack.
+- Removed `!important` (high contrast now zeroes `--el-glow`; the blanket reduced-motion rule is gone: the theme has no motion).
+- Sean's Today-button UUID rule moved from the theme to his personal snippet (`personal-fonts.sh`).
+- Cover re-shot with neutral sample text (garden notes), not Sean's journal.
+- Submission is via community.obsidian.md (sign in, link GitHub, add theme), not a PR to obsidian-releases.

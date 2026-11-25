@@ -13,7 +13,7 @@ body.el-fonts-b {
 }
 body.el-fonts-c {
   --el-font-heading: "Inter", system-ui, sans-serif;
-  --el-font-body: "IBM Plex Mono", ui-monospace, monospace;
+  --el-font-body: "IBM Plex Mono", "EL Mono C", ui-monospace, monospace;
 }
 body.el-fonts-d {
   --el-font-heading: "Atkinson Hyperlegible Next", system-ui, sans-serif;

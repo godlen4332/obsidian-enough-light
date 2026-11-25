@@ -75,6 +75,21 @@ export function fontFaceCss() {
     .join('\n');
 }
 
+// ---------- Font licence notice: travels inside theme.css, since users get only that file ----------
+export function fontLicenceCss() {
+  const dir = join(ROOT, 'fonts', 'licenses');
+  if (!existsSync(dir)) return '';
+  const lines = readdirSync(dir).filter((f) => f.endsWith(' - OFL.txt')).sort().map((f) => {
+    const family = f.replace(' - OFL.txt', '');
+    const copyright = readFileSync(join(dir, f), 'utf8').split('\n').find((l) => /copyright/i.test(l))?.trim() ?? '';
+    const shown = family === 'IBM Plex Mono' ? 'EL Mono C (IBM Plex Mono, subset and renamed: "Plex" is a Reserved Font Name)' : family;
+    return `   ${shown}: ${copyright}`;
+  });
+  return ['/* Bundled fonts, embedded below under the SIL Open Font License 1.1 (https://openfontlicense.org).',
+    '   Full licence texts: https://github.com/godlen4332/obsidian-enough-light/tree/master/fonts/licenses',
+    ...lines, '*/'].join('\n');
+}
+
 export function buildCss({ fonts = true } = {}) {
   const layers = readdirSync(join(ROOT, 'src', 'css'))
     .filter((f) => f.endsWith('.css'))
@@ -83,6 +98,7 @@ export function buildCss({ fonts = true } = {}) {
     .join('\n');
   return [
     `/* Enough Light ${pkg.version} — a calm, legible Obsidian theme. Built file: edit src/, not this. */`,
+    fontLicenceCss(),
     settingsBlock(),
     fonts ? fontFaceCss() : '',
     '/* ===== Palettes (generated from src/palettes.mjs) ===== */',

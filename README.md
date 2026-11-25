@@ -18,27 +18,40 @@ A calm, legible Obsidian theme. Enough light to read by, nothing more.
 - **Legibility is tested, not eyeballed:** body ≥ 7:1, headings ≥ 5.5:1, other text ≥ 4.5:1, on page and sidebar.
 - **Say it once:** every colour lives in `src/palettes.mjs`; each element gets one visual signal.
 
-Design: [docs/enough-light-design.md](docs/enough-light-design.md) · Plan: [docs/enough-light-plan.md](docs/enough-light-plan.md)
+## Install
 
-## Use
+- **From Obsidian:** Settings → Appearance → Themes → **Manage** → search *Enough Light* → Install and use.
+- **By hand:** download `theme.css` and `manifest.json` from the
+  [latest release](https://github.com/godlen4332/obsidian-enough-light/releases/latest) into
+  `<your vault>/.obsidian/themes/Enough Light/`, then pick it under Settings → Appearance → Themes.
+
+**Choose a palette and effects:** install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+plugin, then Settings → Style Settings → Enough Light. Without it you get Honey (light) and Arcane (dark).
+
+**Fonts:** the bundled fonts only show when Settings → Appearance → *Text font* and *Interface font* are
+empty, because those fields override any theme.
+
+**Other devices:** with Obsidian Sync, turn on *Installed themes and snippets* and *Appearance settings*
+on **each** device, then restart Obsidian there.
+
+**Your own Mac fonts on iPhone/iPad:** Obsidian on iOS can't use fonts installed on the phone, and Sync copies
+font *names*, not files. `scripts/personal-fonts.sh "<vault>"` embeds the fonts your Appearance settings use
+into a vault snippet; turn it on under Appearance → CSS snippets. The output stays in your vault and is never
+committed (some fonts are personally licensed).
+
+## Develop
 
 ```bash
-npm test                                    # legibility + build + font contracts
+npm test                                    # legibility + build + font + manifest contracts
 npm run build                               # writes theme.css (≈ 530 KB, fonts embedded)
-npm run dev -- "$HOME/obs 2025-04-13/obs-2025-04-13" [--watch]   # build + install (live vault)
-./scripts/preview.sh                        # screenshots on Obsidian's real app.css → preview/out/
+npm run dev -- "<vault path>" [--watch]     # build + install into a vault
+./scripts/preview.sh                        # screenshots on Obsidian's real app.css → preview/out/, cover.png
 ./scripts/fetch-fonts.sh                    # rebuild fonts/woff2 from google/fonts (needs uv)
 ```
 
-Then: Settings → Appearance → Themes → **Enough Light**; Settings → Style Settings → Enough Light.
+Edit `src/`, never `theme.css`. Design: [docs/enough-light-design.md](docs/enough-light-design.md) ·
+Plan: [docs/enough-light-plan.md](docs/enough-light-plan.md)
 
-**Fonts:** the bundled fonts only show if Settings → Appearance → *Text font* and *Interface font* are
-empty (those fields override any theme). **Your own fonts on iPhone/iPad:** Obsidian on iOS can't use fonts installed on the phone, and Sync copies
-font *names*, not files. `scripts/personal-fonts.sh "<vault>"` embeds the fonts your Appearance settings use
-into a vault snippet (`enough-light-sean-fonts`); turn it on under Appearance → CSS snippets. The output stays
-in your vault and is never committed (Berkeley Mono is a personal licence).
+## Licence
 
-**Other devices:** Obsidian Sync → enable *Active community theme*
-and *Installed community themes* on each device.
-
-Fonts are SIL Open Font License — see `fonts/licenses/`.
+MIT (see `LICENSE`). Bundled fonts are SIL Open Font License 1.1, see `fonts/licenses/`.
