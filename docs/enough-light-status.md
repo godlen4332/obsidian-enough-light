@@ -44,3 +44,14 @@ Repo stays private. When Sean wants to share, do a "share-ready" pass first, the
 - README: remove personal vault path / Berkeley mention. Size 531 KB (fonts) is allowed but heavy.
 - Then: make repo public → friends install via BRAT → after ~a week, PR to `obsidianmd/obsidian-releases`
   (`community-css-themes.json`). Making public and submitting each need Sean's go.
+
+## Getting the theme onto iPhone/iPad (2026-11-25)
+- The theme reaches other devices ONLY through Obsidian Sync. It cannot come from the theme store while the repo is private.
+- Sync's **Installed themes and snippets** and **Appearance settings** switches are per device: turn both on, on the Mac AND on each iPad/iPhone, then fully restart Obsidian there.
+- Then pick Enough Light under Appearance → Themes and turn on the `enough-light-sean-fonts` snippet.
+- Sean asked "why isn't this theme on my ipad" on 2026-11-25; the cause above is likely but unconfirmed (the iPad's settings can't be seen from the Mac).
+
+## Open with Sean (2026-11-25)
+- iPad: turn on the two Sync switches (above); report back if the theme still doesn't appear.
+- Turn on `enough-light-sean-fonts`; turn `sodium` and `ntb-cyan-glow` back off.
+- Sharing still parked; independent review of the build not done.
