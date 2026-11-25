@@ -50,7 +50,8 @@ test('heading colour falls back to the palette when the custom value is cleared 
 test('no colour literals in CSS layers — palettes.mjs is the only source (Review Focus 5)', () => {
   for (const f of readdirSync('src/css')) {
     const src = readFileSync(`src/css/${f}`, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-    assert.doesNotMatch(src, /#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(/i, f);
+    // hsl(var(--accent-h), …) is Obsidian's own accent, not a literal.
+    assert.doesNotMatch(src, /#[0-9a-f]{3,8}\b|rgba?\(|hsla?\((?!var\(--accent-h\))/i, f);
   }
 });
 
@@ -76,4 +77,28 @@ export const OWNED_VARS = [
 test('theme owns every nav/hover/focus colour variable (no snippet can leak one in)', () => {
   const base = readFileSync('src/css/10-base.css', 'utf8');
   for (const v of OWNED_VARS) assert.match(base, new RegExp(`${v}:`), v);
+});
+
+// 0.0.7 customisation settings.
+test('accent: every accent use reads --el-accent-live, and the toggle swaps it to Obsidian\'s accent', () => {
+  const src = readFileSync('src/css/10-base.css', 'utf8') + readFileSync('src/css/50-components.css', 'utf8');
+  assert.doesNotMatch(src.replace(/--el-accent-live: var\(--el-accent\);/, ''), /var\(--el-accent\)/, 'a rule still reads the palette accent directly');
+  assert.match(settings, /^\s*id: el-accent-obsidian$/m);
+  assert.match(css, /body\.el-accent-obsidian:not\(#el\)\s*\{[^}]*--el-accent-live: hsl\(var\(--accent-h\), var\(--accent-s\), var\(--accent-l\)\)/);
+  assert.match(css, /body\.el-accent-obsidian:not\(#el\)\s*\{[^}]*--el-on-accent-live:/);
+});
+
+test('bold, italic and highlight colours fall back to the palette when untouched', () => {
+  assert.match(css, /--bold-color: var\(--el-bold-custom, var\(--el-text\)\);/);
+  assert.match(css, /--italic-color: var\(--el-italic-custom, var\(--el-text\)\);/);
+  assert.match(css, /--text-highlight-bg: var\(--el-highlight-custom, var\(--el-selection\)\);/);
+  for (const id of ['el-bold-custom', 'el-italic-custom', 'el-highlight-custom', 'file-line-width']) {
+    assert.match(settings, new RegExp(`id: ${id}$`, 'm'), id);
+  }
+});
+
+test('only H1–H3 claim to shrink on phones (the phone scale applies to H1–H3 only)', () => {
+  const sizeDescs = [...settings.matchAll(/id: el-h(\d)-size\n(?:.*\n)*?\s*description: (.*)/g)];
+  assert.equal(sizeDescs.length, 6);
+  for (const [, n, d] of sizeDescs) assert.equal(/phones/.test(d), Number(n) <= 3, `H${n}: ${d}`);
 });

@@ -45,6 +45,54 @@ settings:
         value: el-dark-deepsea
       - label: Ember
         value: el-dark-ember
+  - id: el-colours
+    title: Accent and text colours
+    type: heading
+    level: 1
+    collapsed: true
+  - id: el-accent-obsidian
+    title: 'Use Obsidian''s accent colour'
+    description: 'Off: the palette''s accent (contrast-checked). On: the colour from Settings → Appearance → Accent color, which is not contrast-checked.'
+    type: class-toggle
+    default: false
+  - id: el-bold-custom
+    title: Bold text colour
+    description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#3b3226'
+    default-dark: '#e6e1d6'
+  - id: el-italic-custom
+    title: Italic text colour
+    description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#3b3226'
+    default-dark: '#e6e1d6'
+  - id: el-highlight-custom
+    title: Highlight colour (==text==)
+    description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#f0dc9c'
+    default-dark: '#2b3a52'
+  - id: el-layout
+    title: Layout
+    type: heading
+    level: 1
+    collapsed: true
+  - id: file-line-width
+    title: Line width
+    description: 'Width of the text column in pixels. Only applies when Settings → Editor → "Readable line length" is on.'
+    type: variable-number-slider
+    default: 700
+    min: 480
+    max: 1400
+    step: 20
+    format: px
   - id: el-effects
     title: Effects
     type: heading
@@ -220,7 +268,7 @@ settings:
     default-dark: '#e0b45e'
   - id: el-h4-size
     title: H4 size
-    description: In em (1 = body text). Shrinks a little on phones.
+    description: In em (1 = body text).
     type: variable-number-slider
     default: 1.15
     min: 0.8
@@ -259,7 +307,7 @@ settings:
     default-dark: '#c9c3b6'
   - id: el-h5-size
     title: H5 size
-    description: In em (1 = body text). Shrinks a little on phones.
+    description: In em (1 = body text).
     type: variable-number-slider
     default: 1.05
     min: 0.8
@@ -298,7 +346,7 @@ settings:
     default-dark: '#a8a296'
   - id: el-h6-size
     title: H6 size
-    description: In em (1 = body text). Shrinks a little on phones.
+    description: In em (1 = body text).
     type: variable-number-slider
     default: 1
     min: 0.8
@@ -565,6 +613,11 @@ body.theme-dark.el-dark-ember {
    ========================================================================== */
 body.theme-light,
 body.theme-dark {
+  /* The accent every rule below reads. Default: the palette's (contrast-tested).
+     The "Use Obsidian's accent colour" setting swaps it — see the end of file. */
+  --el-accent-live: var(--el-accent);
+  --el-on-accent-live: var(--el-on-accent);
+
   --background-primary: var(--el-bg);
   --background-primary-alt: var(--el-bg2);
   --background-secondary: var(--el-bg2);
@@ -585,15 +638,19 @@ body.theme-dark {
   --text-accent: var(--el-link);
   --text-accent-hover: var(--el-link);
   --text-selection: var(--el-selection);
-  --text-highlight-bg: var(--el-selection);
-  --text-on-accent: var(--el-on-accent);
-  --caret-color: var(--el-accent);
+  /* Style Settings (0.0.7): bold / italic / highlight colours. Untouched =
+     the palette; the custom value wins only when set. */
+  --text-highlight-bg: var(--el-highlight-custom, var(--el-selection));
+  --bold-color: var(--el-bold-custom, var(--el-text));
+  --italic-color: var(--el-italic-custom, var(--el-text));
+  --text-on-accent: var(--el-on-accent-live);
+  --caret-color: var(--el-accent-live);
 
-  --color-accent: var(--el-accent);
-  --interactive-accent: var(--el-accent);
-  --interactive-accent-hover: var(--el-accent);
-  --checkbox-color: var(--el-accent);
-  --checkbox-color-hover: var(--el-accent);
+  --color-accent: var(--el-accent-live);
+  --interactive-accent: var(--el-accent-live);
+  --interactive-accent-hover: var(--el-accent-live);
+  --checkbox-color: var(--el-accent-live);
+  --checkbox-color-hover: var(--el-accent-live);
 
   --link-color: var(--el-link);
   --link-color-hover: var(--el-link);
@@ -609,13 +666,13 @@ body.theme-dark {
 
   --code-background: var(--el-code-bg);
   --code-normal: var(--el-text);
-  --blockquote-border-color: var(--el-accent);
+  --blockquote-border-color: var(--el-accent-live);
   --hr-color: var(--el-border);
   --table-border-color: var(--el-border);
   --metadata-label-text-color: var(--el-muted);
   --metadata-input-text-color: var(--el-text);
   --graph-node: var(--el-muted);
-  --graph-node-focused: var(--el-accent);
+  --graph-node-focused: var(--el-accent-live);
   --graph-line: var(--el-border);
 
   /* Sidebars, file tree, tab lists (incl. Vertical Tabs). Text is always the
@@ -630,7 +687,7 @@ body.theme-dark {
   --nav-item-background-selected: var(--el-selection);
   --background-modifier-hover: color-mix(in srgb, var(--el-text) 7%, transparent);
   --background-modifier-active-hover: color-mix(in srgb, var(--el-text) 10%, transparent);
-  --background-modifier-border-focus: var(--el-accent);
+  --background-modifier-border-focus: var(--el-accent-live);
   --divider-color: var(--el-border);
   --indentation-guide-color: var(--el-border);
   --callout-title-color: var(--el-text);
@@ -639,6 +696,15 @@ body.theme-dark {
   --icon-color: var(--el-muted);
   --icon-color-hover: var(--el-text);
   --icon-color-active: var(--el-text);
+}
+
+/* Style Settings: "Use Obsidian's accent colour" (Appearance → Accent color).
+   :not(#el) so it beats every palette block. Text on the accent is black or
+   white from the accent's lightness: saturation 0 makes the hue irrelevant and
+   the calc lands far outside 0–100%, which the browser clamps to 0% or 100%. */
+body.el-accent-obsidian:not(#el) {
+  --el-accent-live: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --el-on-accent-live: hsl(var(--accent-h), 0%, calc((60% - var(--accent-l)) * 100));
 }
 
 /* ==========================================================================
@@ -803,7 +869,7 @@ body {
 .view-header-title-parent { color: var(--el-muted); }
 
 /* Active tab: one signal — the accent underline. */
-.workspace-tab-header.is-active { box-shadow: inset 0 -2px 0 var(--el-accent); }
+.workspace-tab-header.is-active { box-shadow: inset 0 -2px 0 var(--el-accent-live); }
 
 /* Bases and table views: header in muted, body in normal. */
 .bases-thead, .bases-th { color: var(--el-muted); }

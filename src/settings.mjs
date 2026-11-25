@@ -16,6 +16,19 @@ const paletteSelect = (mode, title) => ({
   options: PALETTES.filter((p) => p.mode === mode).map((p) => ({ label: p.name, value: `el-${mode}-${p.id}` })),
 });
 
+// A colour that follows the palette until the user picks one (same pattern as
+// the heading colours: the CSS reads var(--id, palette value)).
+const themedColour = (id, title, key) => ({
+  id,
+  title,
+  description: 'Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.',
+  type: 'variable-themed-color',
+  format: 'hex',
+  opacity: false,
+  'default-light': lightDefault[key],
+  'default-dark': darkDefault[key],
+});
+
 const headingSection = (n) => [
   { id: `el-h${n}-heading`, title: `H${n}`, type: 'heading', level: 2, collapsed: true },
   {
@@ -31,7 +44,7 @@ const headingSection = (n) => [
   {
     id: `el-h${n}-size`,
     title: `H${n} size`,
-    description: 'In em (1 = body text). Shrinks a little on phones.',
+    description: n <= 3 ? 'In em (1 = body text). Shrinks a little on phones.' : 'In em (1 = body text).',
     type: 'variable-number-slider',
     default: DEFAULT_SIZES[n],
     min: 0.8,
@@ -67,6 +80,31 @@ export const SETTINGS = {
     { id: 'el-palettes', title: 'Palettes', type: 'heading', level: 1, collapsed: false },
     paletteSelect('light', 'Light palette'),
     paletteSelect('dark', 'Dark palette'),
+
+    { id: 'el-colours', title: 'Accent and text colours', type: 'heading', level: 1, collapsed: true },
+    {
+      id: 'el-accent-obsidian',
+      title: "Use Obsidian's accent colour",
+      description: "Off: the palette's accent (contrast-checked). On: the colour from Settings → Appearance → Accent color, which is not contrast-checked.",
+      type: 'class-toggle',
+      default: false,
+    },
+    themedColour('el-bold-custom', 'Bold text colour', 'text'),
+    themedColour('el-italic-custom', 'Italic text colour', 'text'),
+    themedColour('el-highlight-custom', 'Highlight colour (==text==)', 'selection'),
+
+    { id: 'el-layout', title: 'Layout', type: 'heading', level: 1, collapsed: true },
+    {
+      id: 'file-line-width',
+      title: 'Line width',
+      description: 'Width of the text column in pixels. Only applies when Settings → Editor → "Readable line length" is on.',
+      type: 'variable-number-slider',
+      default: 700,
+      min: 480,
+      max: 1400,
+      step: 20,
+      format: 'px',
+    },
 
     { id: 'el-effects', title: 'Effects', type: 'heading', level: 1, collapsed: false },
     { id: 'el-glow-off', title: 'Turn off heading glow', description: 'Glow is on by default, softer in light mode.', type: 'class-toggle', default: false },

@@ -25,8 +25,18 @@ A calm, legible Obsidian theme. Enough light to read by, nothing more.
   [latest release](https://github.com/godlen4332/obsidian-enough-light/releases/latest) into
   `<your vault>/.obsidian/themes/Enough Light/`, then pick it under Settings → Appearance → Themes.
 
-**Choose a palette and effects:** install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
-plugin, then Settings → Style Settings → Enough Light. Without it you get Honey (light) and Arcane (dark).
+**Customise it:** install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+plugin, then Settings → Style Settings → Enough Light. You can set:
+
+- the palette, separately for light and dark mode;
+- whether to use Obsidian's own accent colour (Settings → Appearance → Accent color) instead of the palette's;
+- colours for bold, italic and highlighted text;
+- the width of the text column (when *Readable line length* is on);
+- heading glow and the dark-mode gradient effects;
+- the font pairing;
+- colour, size, font and weight for each heading level.
+
+Without Style Settings you get Honey (light) and Arcane (dark).
 
 **Fonts:** the bundled fonts only show when Settings → Appearance → *Text font* and *Interface font* are
 empty, because those fields override any theme.
