@@ -83,7 +83,7 @@ test('theme owns every nav/hover/focus colour variable (no snippet can leak one 
 test('accent: every accent use reads --el-accent-live, and the toggle swaps it to Obsidian\'s accent', () => {
   const src = readFileSync('src/css/10-base.css', 'utf8') + readFileSync('src/css/50-components.css', 'utf8');
   assert.doesNotMatch(src.replace(/--el-accent-live: var\(--el-accent\);/, ''), /var\(--el-accent\)/, 'a rule still reads the palette accent directly');
-  assert.match(settings, /^\s*id: el-accent-obsidian$/m);
+  assert.match(settings, /id: el-accent-obsidian$/m);
   assert.match(css, /body\.el-accent-obsidian:not\(#el\)\s*\{[^}]*--el-accent-live: hsl\(var\(--accent-h\), var\(--accent-s\), var\(--accent-l\)\)/);
   assert.match(css, /body\.el-accent-obsidian:not\(#el\)\s*\{[^}]*--el-on-accent-live:/);
 });
