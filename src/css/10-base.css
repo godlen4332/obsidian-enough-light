@@ -90,10 +90,12 @@ body.theme-dark {
 }
 
 /* Style Settings: "Use Obsidian's accent colour" (Appearance → Accent color).
-   :not(#el) so it beats every palette block. Text on the accent is black or
+   Same specificity as the default above and later in the file, so it wins
+   without an ID selector or !important. Text on the accent is black or
    white from the accent's lightness: saturation 0 makes the hue irrelevant and
    the calc lands far outside 0–100%, which the browser clamps to 0% or 100%. */
-body.el-accent-obsidian:not(#el) {
+body.el-accent-obsidian.theme-light,
+body.el-accent-obsidian.theme-dark {
   --el-accent-live: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --el-on-accent-live: hsl(var(--accent-h), 0%, calc((60% - var(--accent-l)) * 100));
 }

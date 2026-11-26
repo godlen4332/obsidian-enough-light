@@ -84,8 +84,8 @@ test('accent: every accent use reads --el-accent-live, and the toggle swaps it t
   const src = readFileSync('src/css/10-base.css', 'utf8') + readFileSync('src/css/50-components.css', 'utf8');
   assert.doesNotMatch(src.replace(/--el-accent-live: var\(--el-accent\);/, ''), /var\(--el-accent\)/, 'a rule still reads the palette accent directly');
   assert.match(settings, /id: el-accent-obsidian$/m);
-  assert.match(css, /body\.el-accent-obsidian:not\(#el\)\s*\{[^}]*--el-accent-live: hsl\(var\(--accent-h\), var\(--accent-s\), var\(--accent-l\)\)/);
-  assert.match(css, /body\.el-accent-obsidian:not\(#el\)\s*\{[^}]*--el-on-accent-live:/);
+  assert.match(css, /body\.el-accent-obsidian\.theme-dark\s*\{[^}]*--el-accent-live: hsl\(var\(--accent-h\), var\(--accent-s\), var\(--accent-l\)\)/);
+  assert.match(css, /body\.el-accent-obsidian\.theme-dark\s*\{[^}]*--el-on-accent-live:/);
 });
 
 test('bold, italic and highlight colours fall back to the palette when untouched', () => {
@@ -101,4 +101,20 @@ test('only H1–H3 claim to shrink on phones (the phone scale applies to H1–H3
   const sizeDescs = [...settings.matchAll(/id: el-h(\d)-size\n(?:.*\n)*?\s*description: (.*)/g)];
   assert.equal(sizeDescs.length, 6);
   for (const [, n, d] of sizeDescs) assert.equal(/phones/.test(d), Number(n) <= 3, `H${n}: ${d}`);
+});
+
+// Theme guidelines: no !important, low-specificity selectors (no ID selectors).
+test('no !important and no ID selectors in the CSS layers', () => {
+  for (const f of readdirSync('src/css')) {
+    const src = readFileSync(`src/css/${f}`, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+    assert.doesNotMatch(src, /!important/, f);
+    assert.doesNotMatch(src, /#[a-z][\w-]*\s*[),{.:\s]/i, f);
+  }
+});
+
+// Theme guidelines (hard rule): no remote assets or network calls.
+test('built theme.css loads nothing remote', () => {
+  const built = buildCss({ fonts: true }).replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.doesNotMatch(built, /@import/);
+  assert.doesNotMatch(built, /url\(\s*['"]?(https?:|\/\/)/i);
 });

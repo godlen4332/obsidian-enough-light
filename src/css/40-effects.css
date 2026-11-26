@@ -4,12 +4,12 @@
    palette's strength. Letters stay solid; the glow sits behind them.
    ========================================================================== */
 body:not(.el-glow-off) {
-  --el-glow-h1: 0 0 0.45em color-mix(in srgb, var(--h1-color) calc(var(--el-glow) * 100%), transparent);
-  --el-glow-h2: 0 0 0.45em color-mix(in srgb, var(--h2-color) calc(var(--el-glow) * 100%), transparent);
-  --el-glow-h3: 0 0 0.4em color-mix(in srgb, var(--h3-color) calc(var(--el-glow) * 100%), transparent);
-  --el-glow-h4: 0 0 0.35em color-mix(in srgb, var(--h4-color) calc(var(--el-glow) * 90%), transparent);
-  --el-glow-h5: 0 0 0.35em color-mix(in srgb, var(--h5-color) calc(var(--el-glow) * 80%), transparent);
-  --el-glow-h6: 0 0 0.35em color-mix(in srgb, var(--h6-color) calc(var(--el-glow) * 70%), transparent);
+  --el-glow-h1: 0 0 0.45em color-mix(in srgb, var(--h1-color) calc(var(--el-glow-strength, var(--el-glow)) * 100%), transparent);
+  --el-glow-h2: 0 0 0.45em color-mix(in srgb, var(--h2-color) calc(var(--el-glow-strength, var(--el-glow)) * 100%), transparent);
+  --el-glow-h3: 0 0 0.4em color-mix(in srgb, var(--h3-color) calc(var(--el-glow-strength, var(--el-glow)) * 100%), transparent);
+  --el-glow-h4: 0 0 0.35em color-mix(in srgb, var(--h4-color) calc(var(--el-glow-strength, var(--el-glow)) * 90%), transparent);
+  --el-glow-h5: 0 0 0.35em color-mix(in srgb, var(--h5-color) calc(var(--el-glow-strength, var(--el-glow)) * 80%), transparent);
+  --el-glow-h6: 0 0 0.35em color-mix(in srgb, var(--h6-color) calc(var(--el-glow-strength, var(--el-glow)) * 70%), transparent);
 }
 body:not(.el-glow-off) .markdown-rendered h1, body:not(.el-glow-off) .HyperMD-header-1, body:not(.el-glow-off) .inline-title { text-shadow: var(--el-glow-h1); }
 body:not(.el-glow-off) .markdown-rendered h2, body:not(.el-glow-off) .HyperMD-header-2 { text-shadow: var(--el-glow-h2); }
@@ -49,10 +49,10 @@ body.theme-dark.el-ombre-headings :is(.markdown-rendered h1, .markdown-rendered 
   width: fit-content;
 }
 body.theme-dark.el-ombre-headings:not(.el-glow-off) :is(.markdown-rendered h1, .HyperMD-header-1 .cm-header-1, .inline-title) {
-  filter: drop-shadow(0 0 0.35em color-mix(in srgb, var(--el-ombre-h1-a) calc(var(--el-glow) * 100%), transparent));
+  filter: drop-shadow(0 0 0.35em color-mix(in srgb, var(--el-ombre-h1-a) calc(var(--el-glow-strength, var(--el-glow)) * 100%), transparent));
 }
 body.theme-dark.el-ombre-headings:not(.el-glow-off) :is(.markdown-rendered h2, .HyperMD-header-2 .cm-header-2) {
-  filter: drop-shadow(0 0 0.35em color-mix(in srgb, var(--el-ombre-h2-a) calc(var(--el-glow) * 100%), transparent));
+  filter: drop-shadow(0 0 0.35em color-mix(in srgb, var(--el-ombre-h2-a) calc(var(--el-glow-strength, var(--el-glow)) * 100%), transparent));
 }
 /* The editor heading line itself carries no glow when ombre is on (the span does). */
 body.theme-dark.el-ombre-headings :is(.HyperMD-header-1, .HyperMD-header-2) { text-shadow: none; }

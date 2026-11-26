@@ -1,16 +1,18 @@
 /* ==========================================================================
    70 · Accessibility — follow the device's own settings (design §5).
    No !important (Obsidian theme guidelines): every glow and drop-shadow is
-   driven by --el-glow, so zeroing it turns them all into transparent shadows.
-   :not(#el) lifts specificity above the per-palette blocks without !important.
+   driven by --el-glow-strength (falls back to the palette's --el-glow), so
+   zeroing it turns them all into transparent shadows. Low specificity: these
+   variables are set nowhere else at a higher one, so source order wins and a
+   user snippet can still override them.
    No reduced-motion rule: the theme adds no transitions or animations, and a
    blanket one would freeze core and plugin spinners.
    ========================================================================== */
 @media (prefers-contrast: more) {
-  body.theme-light:not(#el), body.theme-dark:not(#el) {
+  body.theme-light, body.theme-dark {
     --text-muted: var(--el-text);
     --text-faint: var(--el-text);
     --metadata-label-text-color: var(--el-text);
-    --el-glow: 0;
+    --el-glow-strength: 0;
   }
 }
