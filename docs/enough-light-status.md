@@ -87,3 +87,18 @@ Repo stays private. When Sean wants to share, do a "share-ready" pass first, the
   monochrome headings; possible empty `--el-hN-font` bug (untested).
 - Still pending: Sean's `git push --force origin 0.0.6` (remote tag still at pre-scrub 39f2005);
   directory listing still awaiting Obsidian review.
+
+## 0.0.8 — directory-review audit (2026-11-26)
+
+Research: obsidian-releases PRs are closed (since 2026-05); submission is community.obsidian.md, which scans each
+release automatically (Manifest / Releases / Source code / Build verification; Error blocks install, Warning does
+not; "Request review" in the entry menu re-scans). Top removal reason: remote resources (16 of 26). Rules checked:
+name (no "Obsidian"/"Theme", Basic Latin), manifest fields, tag == version, assets, README/LICENSE/screenshot,
+no remote assets, avoid !important, low specificity.
+
+Found and fixed:
+- LICENSE had a font note appended, so GitHub showed NOASSERTION ("custom licence" warning). Now plain MIT; GitHub detects MIT. Font note stays in README.
+- cover.png was 1024x576 (old validator: >1000x500 = error). Now 512x288; preview.sh resizes.
+- manifest had undocumented `repo` and `screenshot` keys; removed.
+- Four `:not(#el)` ID-specificity tricks removed (guideline: low specificity, let snippets override).
+- New tests: no !important, no ID selectors, no remote url()/@import in built CSS, screenshot 512x288, plain MIT, manifest fields + name rules. CI 43/43 at 639b911; release 0.0.8 published; installed in vault.
