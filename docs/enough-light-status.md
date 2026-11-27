@@ -151,6 +151,13 @@ Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; nex
   old CSS overflows to 659px, new CSS has nothing past the panel edge. Fix: wrapping flex, chips 1 1 130px
   (max 180px, min-width 0): two per row on a phone, four in a row on desktop. Test pins it.
 
+## 0.0.15 (2026-11-27)
+- Theme is LISTED (community-css-themes.json, 2026-11-27); the iPhone theme page shows README and version.
+- That page scrolled sideways: Obsidian gives .community-modal-readme overflow-wrap: break-word but not
+  .community-modal-meta, and the repo URL ("https://github.com/godlen4332/obsidian-" has no break point) is
+  wider than a phone in this theme's wide font. 50-components.css sets overflow-wrap: anywhere on both.
+  Proof: mock-up at 360px, old scrollWidth 362 > 360, new 360. Test pins it.
+
 ## Open (2026-11-27)
 - Dashboard: Sean to press "Check for new releases" (now 0.0.12), then "…" → Request review.
 - Glow trade-off (0.0.11): without the Style Settings plugin, glow is off.

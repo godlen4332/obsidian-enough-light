@@ -230,3 +230,9 @@ test('palette samples wrap on a phone instead of pushing the panel sideways (0.0
   assert.match(chip, /min-width: 0/);
   assert.match(chip, /flex: 1 1 130px/); // two per row on a ~340px phone panel
 });
+
+test('the community theme page wraps long links on a phone (0.0.15)', () => {
+  // The repo URL in Obsidian's details box has no break point and pushed the
+  // iPhone page sideways (Sean, 2026-11-27).
+  assert.match(css, /\.community-modal-meta,\s*\.community-modal-readme \{\s*overflow-wrap: anywhere;/);
+});

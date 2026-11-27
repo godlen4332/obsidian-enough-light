@@ -1,4 +1,4 @@
-/* Enough Light 0.0.14 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
+/* Enough Light 0.0.15 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
 
 /* Bundled fonts, embedded below under the SIL Open Font License 1.1 (https://openfontlicense.org).
    Full licence texts: https://github.com/godlen4332/obsidian-enough-light/tree/master/fonts/licenses
@@ -17,7 +17,7 @@ settings:
   - id: el-about
     type: info-text
     markdown: true
-    description: 'Enough Light 0.0.14 · [What''s new](https://github.com/godlen4332/obsidian-enough-light/releases) · [README](https://github.com/godlen4332/obsidian-enough-light#readme)'
+    description: 'Enough Light 0.0.15 · [What''s new](https://github.com/godlen4332/obsidian-enough-light/releases) · [README](https://github.com/godlen4332/obsidian-enough-light#readme)'
   - id: el-palettes
     title: Palettes
     type: heading
@@ -973,6 +973,15 @@ body {
 }
 .callout[data-callout="note-toolbar"] .note-toolbar-button:hover,
 .callout[data-callout="note-toolbar"] .clickable-icon:hover { filter: none; box-shadow: none; }
+
+/* Community theme/plugin page: Obsidian lets the README wrap long words but
+   not the details box above it, so the repository URL (no break point in
+   "https://github.com/godlen4332/obsidian-") ran past a phone screen and the
+   whole page scrolled sideways (Sean, iPhone, 0.0.15). */
+.community-modal-meta,
+.community-modal-readme {
+  overflow-wrap: anywhere;
+}
 
 /* ==========================================================================
    60 · Phone — the big heading steps shrink a little so an H1 doesn't wrap

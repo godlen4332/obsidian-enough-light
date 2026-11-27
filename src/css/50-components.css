@@ -43,3 +43,12 @@ body {
 }
 .callout[data-callout="note-toolbar"] .note-toolbar-button:hover,
 .callout[data-callout="note-toolbar"] .clickable-icon:hover { filter: none; box-shadow: none; }
+
+/* Community theme/plugin page: Obsidian lets the README wrap long words but
+   not the details box above it, so the repository URL (no break point in
+   "https://github.com/godlen4332/obsidian-") ran past a phone screen and the
+   whole page scrolled sideways (Sean, iPhone, 0.0.15). */
+.community-modal-meta,
+.community-modal-readme {
+  overflow-wrap: anywhere;
+}
