@@ -139,7 +139,7 @@ export const SETTINGS = {
     },
 
     { id: 'el-effects', title: 'Effects', type: 'heading', level: 1, collapsed: false },
-    { id: 'el-glow-off', title: 'Turn off heading glow', description: 'Glow is on by default, softer in light mode.', type: 'class-toggle', default: false },
+    { id: 'el-glow', title: 'Heading glow', description: 'On by default; softer in light mode.', type: 'class-toggle', default: true },
     { id: 'el-ombre-page', title: 'Ombre page fade (dark mode)', type: 'class-toggle', default: false },
     { id: 'el-ombre-headings', title: 'Ombre gradient headings (dark mode, H1–H2)', type: 'class-toggle', default: false },
 

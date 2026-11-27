@@ -32,7 +32,7 @@ plugin, then Settings → Style Settings → Enough Light. You can set:
 - whether to use Obsidian's own accent colour (Settings → Appearance → Accent color) instead of the palette's;
 - colours for bold, italic and highlighted text;
 - the width of the text column (when *Readable line length* is on);
-- heading glow and the dark-mode gradient effects;
+- heading glow (on by default) and the dark-mode gradient effects;
 - the font pairing;
 - colour, size, font and weight for each heading level, with live samples (all six together, and each level in its own section) that update as you change them.
 

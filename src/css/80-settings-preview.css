@@ -47,12 +47,12 @@
 .style-settings-markdown .el-hp-4 { color: var(--h4-color); font-family: var(--h4-font); font-size: var(--h4-size); font-weight: var(--h4-weight); line-height: var(--h4-line-height); }
 .style-settings-markdown .el-hp-5 { color: var(--h5-color); font-family: var(--h5-font); font-size: var(--h5-size); font-weight: var(--h5-weight); line-height: var(--h5-line-height); }
 .style-settings-markdown .el-hp-6 { color: var(--h6-color); font-family: var(--h6-font); font-size: var(--h6-size); font-weight: var(--h6-weight); line-height: var(--h6-line-height); }
-body:not(.el-glow-off) .style-settings-markdown .el-hp-1 { text-shadow: var(--el-glow-h1); }
-body:not(.el-glow-off) .style-settings-markdown .el-hp-2 { text-shadow: var(--el-glow-h2); }
-body:not(.el-glow-off) .style-settings-markdown .el-hp-3 { text-shadow: var(--el-glow-h3); }
-body:not(.el-glow-off) .style-settings-markdown .el-hp-4 { text-shadow: var(--el-glow-h4); }
-body:not(.el-glow-off) .style-settings-markdown .el-hp-5 { text-shadow: var(--el-glow-h5); }
-body:not(.el-glow-off) .style-settings-markdown .el-hp-6 { text-shadow: var(--el-glow-h6); }
+body.el-glow .style-settings-markdown .el-hp-1 { text-shadow: var(--el-glow-h1); }
+body.el-glow .style-settings-markdown .el-hp-2 { text-shadow: var(--el-glow-h2); }
+body.el-glow .style-settings-markdown .el-hp-3 { text-shadow: var(--el-glow-h3); }
+body.el-glow .style-settings-markdown .el-hp-4 { text-shadow: var(--el-glow-h4); }
+body.el-glow .style-settings-markdown .el-hp-5 { text-shadow: var(--el-glow-h5); }
+body.el-glow .style-settings-markdown .el-hp-6 { text-shadow: var(--el-glow-h6); }
 
 /* Ombre gradient headings, as in notes (dark only, H1–H2). */
 body.theme-dark.el-ombre-headings .style-settings-markdown .el-hp-1 { background-image: linear-gradient(90deg, var(--el-ombre-h1-a), var(--el-ombre-h1-b)); }

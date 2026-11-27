@@ -122,3 +122,16 @@ Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; nex
   The palette in use gets an inset frame (an outline was clipped by the settings row) and "✓ Name" in bold.
 - Sean: wants a live sample inside each heading section too. Each H section now opens with "Heading N sample",
   styled by that level's settings; the all-levels panel at the top of Headings stays.
+
+## 0.0.11 (2026-11-27): glow switch reads the right way round
+- "Turn off heading glow" (el-glow-off) became "Heading glow" (el-glow, class-toggle, default on). CSS keys on body.el-glow.
+- Trade-off: without the Style Settings plugin no class is set, so glow is off there (before, it was on). Told Sean.
+
+## Open (2026-11-27, at compact)
+- Sean asked for radio buttons for the palette. Not possible: themes are CSS only, Style Settings has no radio type,
+  and info-text HTML can't act. Options given: 1 join dropdown + chips into one card (recommended), 2 a switch per
+  palette (confusing), 3 a companion plugin. Sean: "show me option 1". Comparison render: scratchpad opt1.png.
+  WAITING on Sean: build option 1 or keep two cards. If yes: CSS on .setting-item[data-id="el-light-palette"] /
+  [data-id="el-light-palette-preview"] (and dark) to drop the gap and inner corners; Style Settings sets data-id
+  on every item. Check in the vault (exact Obsidian card markup unknown; screenshot from Sean).
+- Dashboard: Sean to press "Check for new releases" (now 0.0.11), then "…" → Request review.

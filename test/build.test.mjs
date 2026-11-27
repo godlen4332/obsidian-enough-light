@@ -187,3 +187,13 @@ test('each heading section opens with a live sample of just that level', () => {
     for (let m = 1; m <= 6; m++) if (m !== n) assert.doesNotMatch(block, new RegExp(`el-hp-${m}"`), `H${n} sample shows only H${n}`);
   }
 });
+
+test("heading glow is a switch named 'Heading glow', on by default (Sean, 0.0.11)", () => {
+  const block = settings.split(/\n  - /).find((b) => b.startsWith('id: el-glow\n'));
+  assert.ok(block, 'el-glow setting');
+  assert.match(block, /title: Heading glow/);
+  assert.match(block, /type: class-toggle/);
+  assert.match(block, /default: true/);
+  assert.doesNotMatch(css, /el-glow-off/, 'old inverted switch is gone');
+  assert.match(css, /body\.el-glow \.markdown-rendered h1/);
+});
