@@ -5,15 +5,22 @@
    generated per palette by scripts/build.mjs (--sw-*). Scoped to
    .style-settings-markdown so nothing here can reach a note.
    ========================================================================== */
+/* Wrapping flex, not an auto-fill grid: a grid's minimum width is every
+   column side by side (~630px), which pushed the iPhone panel sideways
+   (Sean, 0.0.14). Wrapping flex is only as wide as one chip at minimum. */
 .style-settings-markdown .el-swatches {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 4px;
   max-width: 760px;
 }
 /* Each chip is a tiny page in that palette: name, H1, H2, body text, link. */
 .style-settings-markdown .el-sw {
+  flex: 1 1 130px;
+  max-width: 180px;
+  min-width: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 2px;

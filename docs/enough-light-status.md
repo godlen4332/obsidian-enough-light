@@ -144,6 +144,13 @@ Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; nex
 - Website listing public: https://community.obsidian.md/themes/enough-light (2026-11-27). Not yet in
   community-css-themes.json (the in-app browser's list), which is mirrored on a schedule.
 
+## 0.0.14 (2026-11-27)
+- Sean: "in style settings, ios, sideways scrolling bug". Cause: the palette chips were an auto-fill grid
+  (minmax 150px, max-width 760); inside Style Settings' flex row its minimum width was every column side by
+  side (~630–659px), wider than the phone panel. Proof: headless render of the whole generated panel at 360px,
+  old CSS overflows to 659px, new CSS has nothing past the panel edge. Fix: wrapping flex, chips 1 1 130px
+  (max 180px, min-width 0): two per row on a phone, four in a row on desktop. Test pins it.
+
 ## Open (2026-11-27)
 - Dashboard: Sean to press "Check for new releases" (now 0.0.12), then "…" → Request review.
 - Glow trade-off (0.0.11): without the Style Settings plugin, glow is off.

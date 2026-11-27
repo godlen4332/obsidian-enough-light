@@ -1,4 +1,4 @@
-/* Enough Light 0.0.13 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
+/* Enough Light 0.0.14 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
 
 /* Bundled fonts, embedded below under the SIL Open Font License 1.1 (https://openfontlicense.org).
    Full licence texts: https://github.com/godlen4332/obsidian-enough-light/tree/master/fonts/licenses
@@ -17,7 +17,7 @@ settings:
   - id: el-about
     type: info-text
     markdown: true
-    description: 'Enough Light 0.0.13 · [What''s new](https://github.com/godlen4332/obsidian-enough-light/releases) · [README](https://github.com/godlen4332/obsidian-enough-light#readme)'
+    description: 'Enough Light 0.0.14 · [What''s new](https://github.com/godlen4332/obsidian-enough-light/releases) · [README](https://github.com/godlen4332/obsidian-enough-light#readme)'
   - id: el-palettes
     title: Palettes
     type: heading
@@ -1007,15 +1007,22 @@ body.is-phone .callout[data-callout="note-toolbar"] { --cg-nt-item-font-size: 1e
    generated per palette by scripts/build.mjs (--sw-*). Scoped to
    .style-settings-markdown so nothing here can reach a note.
    ========================================================================== */
+/* Wrapping flex, not an auto-fill grid: a grid's minimum width is every
+   column side by side (~630px), which pushed the iPhone panel sideways
+   (Sean, 0.0.14). Wrapping flex is only as wide as one chip at minimum. */
 .style-settings-markdown .el-swatches {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 4px;
   max-width: 760px;
 }
 /* Each chip is a tiny page in that palette: name, H1, H2, body text, link. */
 .style-settings-markdown .el-sw {
+  flex: 1 1 130px;
+  max-width: 180px;
+  min-width: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 2px;

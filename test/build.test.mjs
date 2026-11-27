@@ -219,3 +219,14 @@ test('the panel opens with the installed version and links (0.0.13)', () => {
   assert.ok(first.includes(`Enough Light ${version} · [What''s new](https://github.com/godlen4332/obsidian-enough-light/releases)`), first);
   assert.ok(first.includes('[README](https://github.com/godlen4332/obsidian-enough-light#readme)'));
 });
+
+test('palette samples wrap on a phone instead of pushing the panel sideways (0.0.14)', () => {
+  const rule = css.match(/\.style-settings-markdown \.el-swatches \{[^}]*\}/)[0];
+  // An auto-fill grid's minimum width is every column side by side (~630px),
+  // wider than an iPhone: Style Settings scrolled sideways (Sean, 2026-11-27).
+  assert.doesNotMatch(rule, /grid-template-columns/);
+  assert.match(rule, /flex-wrap: wrap/);
+  const chip = css.match(/\.style-settings-markdown \.el-sw \{[^}]*\}/)[0];
+  assert.match(chip, /min-width: 0/);
+  assert.match(chip, /flex: 1 1 130px/); // two per row on a ~340px phone panel
+});
