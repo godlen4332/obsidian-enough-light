@@ -156,3 +156,6 @@ Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; nex
 - Glow trade-off (0.0.11): without the Style Settings plugin, glow is off.
 - Colour pickers apply only on Save: Style Settings writes the value on Pickr's "save" event (sliders write live).
   A theme can't change that. Sean (2026-11-27): live with it; no feature request upstream.
+- README reads well on a phone (2026-11-27): Sean saw the iOS theme page (README now shown, theme listed) scroll
+  sideways. Replaced the 4-column palette table and the long-line command block with plain lists. The theme
+  page reads README from the repo, so no release is needed. Not verified on the phone by me.

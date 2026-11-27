@@ -4,12 +4,18 @@ A calm, legible Obsidian theme. Enough light to read by, nothing more.
 
 ![Enough Light: Honey, Daylight, Arcane, Deep Sea](cover.png)
 
-| Light | | Dark | |
-|---|---|---|---|
-| **Honey** (default) | warm yellow paper; rust, amber, olive | **Arcane** (default) | teal, magenta, blue with a soft glow |
-| **Slate** | cool blue-grey; navy, plum, teal | **Deep Sea** | navy paper; sky, aqua, lilac; optional ombre |
-| **Sage** | soft green; forest, terracotta, indigo | **Ember** | warm brown; gold, copper, rose |
-| **Daylight** | bright white; Arcane's colours by day | | |
+**Light palettes**
+
+- **Honey** (default): warm yellow paper; rust, amber, olive
+- **Slate**: cool blue-grey; navy, plum, teal
+- **Sage**: soft green; forest, terracotta, indigo
+- **Daylight**: bright white; Arcane's colours by day
+
+**Dark palettes**
+
+- **Arcane** (default): teal, magenta, blue with a soft glow
+- **Deep Sea**: navy paper; sky, aqua, lilac; optional ombre
+- **Ember**: warm brown; gold, copper, rose
 
 - **Seven palettes:** light Honey · Slate · Sage · Daylight; dark Arcane · Deep Sea · Ember.
 - **Optional effects:** heading glow (all palettes), ombre page fade and gradient headings (dark).
@@ -51,13 +57,11 @@ committed (some fonts are personally licensed).
 
 ## Develop
 
-```bash
-npm test                                    # legibility + build + font + manifest contracts
-npm run build                               # writes theme.css (≈ 530 KB, fonts embedded)
-npm run dev -- "<vault path>" [--watch]     # build + install into a vault
-./scripts/preview.sh                        # screenshots on Obsidian's real app.css → preview/out/, cover.png
-./scripts/fetch-fonts.sh                    # rebuild fonts/woff2 from google/fonts (needs uv)
-```
+- `npm test`: legibility, build, font and manifest checks
+- `npm run build`: writes `theme.css` (fonts embedded)
+- `npm run dev -- "<vault path>" [--watch]`: build and install into a vault
+- `./scripts/preview.sh`: screenshots on Obsidian's real app.css, and `cover.png`
+- `./scripts/fetch-fonts.sh`: rebuild `fonts/woff2` from google/fonts (needs uv)
 
 Edit `src/`, never `theme.css`. Design: [docs/enough-light-design.md](docs/enough-light-design.md) ·
 Plan: [docs/enough-light-plan.md](docs/enough-light-plan.md)
