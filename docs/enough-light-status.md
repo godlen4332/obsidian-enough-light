@@ -137,3 +137,5 @@ Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; nex
 ## Open (2026-11-27)
 - Dashboard: Sean to press "Check for new releases" (now 0.0.12), then "…" → Request review.
 - Glow trade-off (0.0.11): without the Style Settings plugin, glow is off.
+- Colour pickers apply only on Save: Style Settings writes the value on Pickr's "save" event (sliders write live).
+  A theme can't change that. Sean (2026-11-27): live with it; no feature request upstream.
