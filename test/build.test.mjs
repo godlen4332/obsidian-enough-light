@@ -27,6 +27,9 @@ test('defaults need no class: plain .theme-light is Honey, plain .theme-dark is 
 test('palette selectors are scoped to their mode (Review Focus 2)', () => {
   for (const m of css.matchAll(/([^{}\n]*\.el-(light|dark)-[a-z]+[^{}\n]*)\{/g)) {
     for (const sel of m[1].split(',')) {
+      // The settings chip outline marks the live palette in BOTH modes (you can
+      // pick your light palette while in dark mode); it sets no palette colours.
+      if (sel.includes('.el-sw-')) continue;
       const mode = sel.match(/\.el-(light|dark)-/)?.[1];
       if (mode) assert.ok(sel.includes(`.theme-${mode}`), `unscoped: ${sel.trim()}`);
     }
@@ -117,4 +120,54 @@ test('built theme.css loads nothing remote', () => {
   const built = buildCss({ fonts: true }).replace(/\/\*[\s\S]*?\*\//g, '');
   assert.doesNotMatch(built, /@import/);
   assert.doesNotMatch(built, /url\(\s*['"]?(https?:|\/\/)/i);
+});
+
+// ---------- 0.0.9: Style Settings previews ----------
+test('each palette picker is followed by a preview with one chip per palette of that mode', () => {
+  for (const mode of ['light', 'dark']) {
+    const block = settings.split(/\n  - /).find((b) => b.startsWith(`id: el-${mode}-palette-preview`));
+    assert.ok(block, `missing el-${mode}-palette-preview`);
+    assert.match(block, /type: info-text/);
+    assert.match(block, /markdown: true/);
+    for (const p of PALETTES) {
+      const has = block.includes(`el-sw-${p.id}"`);
+      assert.equal(has, p.mode === mode, `${mode} preview and ${p.id}`);
+    }
+    const order = settings.indexOf(`id: el-${mode}-palette\n`);
+    assert.ok(order >= 0 && order < settings.indexOf(`id: el-${mode}-palette-preview`), 'preview sits after its picker');
+  }
+});
+
+test("every chip carries its own palette's colours, and the live palette gets an outline", () => {
+  for (const p of PALETTES) {
+    const rule = css.match(new RegExp(`\\.el-sw-${p.id} \\{([^}]*)\\}`))?.[1] ?? '';
+    assert.match(rule, new RegExp(`--sw-bg: ${p.bg};`), p.id);
+    assert.match(rule, new RegExp(`--sw-text: ${p.text};`), p.id);
+    assert.match(rule, new RegExp(`--sw-1: ${p.h1};`), p.id);
+    assert.match(rule, new RegExp(`--sw-4: ${p.accent};`), p.id);
+    assert.ok(css.includes(`body.el-${p.mode}-${p.id} .el-sw-${p.id}`), `live outline for ${p.id}`);
+  }
+  // No class set yet: the default palette's chip is the live one.
+  assert.match(css, /body:not\(\.el-light-slate\)[^{]*\.el-sw-honey/);
+});
+
+test('heading preview sits first under Headings and reads the same variables as notes', () => {
+  assert.match(settings, /id: el-headings\n[^]*?\n  - id: el-heading-preview\n/);
+  assert.ok(settings.indexOf('id: el-heading-preview') < settings.indexOf('id: el-h1-heading'));
+  for (let n = 1; n <= 6; n++) {
+    assert.ok(settings.includes(`el-hp-${n}`), `H${n} sample`);
+    const rule = css.match(new RegExp(`\\.el-hp-${n} \\{([^}]*)\\}`))?.[1] ?? '';
+    for (const v of ['color', 'font', 'size', 'weight']) assert.ok(rule.includes(`var(--h${n}-${v})`), `H${n} ${v}`);
+  }
+});
+
+test('preview styles are scoped to the settings panel, never notes', () => {
+  for (const m of css.matchAll(/([^{}]*\.el-(?:sw|hp|swatches)[^{}]*)\{/g)) {
+    for (const sel of m[1].split(',')) {
+      const s = sel.trim();
+      if (/^\.el-sw-[a-z]+$/.test(s)) continue; // the variable-only chip rules
+      if (/^body[^ ]* \.el-sw-[a-z]+$/.test(s)) continue; // live-palette outline
+      assert.ok(s.includes('.style-settings-markdown'), `unscoped preview rule: ${s}`);
+    }
+  }
 });

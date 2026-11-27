@@ -7,6 +7,29 @@ const DEFAULT_SIZES = { 1: 2, 2: 1.6, 3: 1.3, 4: 1.15, 5: 1.05, 6: 1 };
 const lightDefault = PALETTES.find((p) => p.mode === 'light' && p.isDefault);
 const darkDefault = PALETTES.find((p) => p.mode === 'dark' && p.isDefault);
 
+// Previews (0.0.9). Style Settings renders an info-text with markdown: true
+// through Obsidian's Markdown renderer, so a line of plain HTML comes through
+// with its classes, and the theme's CSS (src/css/80-settings-preview.css plus
+// the generated per-palette swatch variables) paints it. The dropdown itself
+// is a native <select>, which no theme can colour.
+const palettePreview = (mode) => ({
+  id: `el-${mode}-palette-preview`,
+  type: 'info-text',
+  markdown: true,
+  description: `<div class="el-swatches">${PALETTES.filter((p) => p.mode === mode)
+    .map((p) => `<span class="el-sw el-sw-${p.id}"><span class="el-sw-name">${p.name}</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span>`)
+    .join('')}</div>`,
+});
+
+// One live sample of all six levels; it reads the same --hN-* variables as
+// notes, so it changes the moment a heading setting does.
+const headingPreview = {
+  id: 'el-heading-preview',
+  type: 'info-text',
+  markdown: true,
+  description: `<div class="el-hp">${[1, 2, 3, 4, 5, 6].map((n) => `<div class="el-hp-${n}">Heading ${n}</div>`).join('')}</div>`,
+};
+
 const paletteSelect = (mode, title) => ({
   id: `el-${mode}-palette`,
   title,
@@ -79,7 +102,9 @@ export const SETTINGS = {
   settings: [
     { id: 'el-palettes', title: 'Palettes', type: 'heading', level: 1, collapsed: false },
     paletteSelect('light', 'Light palette'),
+    palettePreview('light'),
     paletteSelect('dark', 'Dark palette'),
+    palettePreview('dark'),
 
     { id: 'el-colours', title: 'Accent and text colours', type: 'heading', level: 1, collapsed: true },
     {
@@ -128,6 +153,7 @@ export const SETTINGS = {
     },
 
     { id: 'el-headings', title: 'Headings', type: 'heading', level: 1, collapsed: true },
+    headingPreview,
     ...[1, 2, 3, 4, 5, 6].flatMap(headingSection),
   ],
 };

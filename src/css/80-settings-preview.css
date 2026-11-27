@@ -1,0 +1,74 @@
+/* ==========================================================================
+   80 · Style Settings previews (0.0.9) — a row of palette chips under each
+   palette picker, and a live H1–H6 sample at the top of Headings. The HTML
+   comes from src/settings.mjs (info-text, markdown: true); chip colours are
+   generated per palette by scripts/build.mjs (--sw-*). Scoped to
+   .style-settings-markdown so nothing here can reach a note.
+   ========================================================================== */
+.style-settings-markdown .el-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+.style-settings-markdown .el-sw {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 84px;
+  padding: 6px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--sw-border);
+  background: var(--sw-bg);
+  color: var(--sw-text);
+}
+.style-settings-markdown .el-sw-name {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.style-settings-markdown .el-sw-dots { display: flex; gap: 4px; }
+.style-settings-markdown .el-sw-dots > span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.style-settings-markdown .el-sw-dots > span:nth-child(1) { background: var(--sw-1); }
+.style-settings-markdown .el-sw-dots > span:nth-child(2) { background: var(--sw-2); }
+.style-settings-markdown .el-sw-dots > span:nth-child(3) { background: var(--sw-3); }
+.style-settings-markdown .el-sw-dots > span:nth-child(4) { background: var(--sw-4); border-radius: 3px; }
+
+/* Heading sample: note-sized text, so the em sizes match what notes show. */
+.style-settings-markdown .el-hp {
+  margin-top: 4px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--el-border);
+  background: var(--el-bg);
+  font-size: var(--font-text-size);
+}
+.style-settings-markdown .el-hp > div { margin: 0; }
+.style-settings-markdown .el-hp-1 { color: var(--h1-color); font-family: var(--h1-font); font-size: var(--h1-size); font-weight: var(--h1-weight); line-height: var(--h1-line-height); }
+.style-settings-markdown .el-hp-2 { color: var(--h2-color); font-family: var(--h2-font); font-size: var(--h2-size); font-weight: var(--h2-weight); line-height: var(--h2-line-height); }
+.style-settings-markdown .el-hp-3 { color: var(--h3-color); font-family: var(--h3-font); font-size: var(--h3-size); font-weight: var(--h3-weight); line-height: var(--h3-line-height); }
+.style-settings-markdown .el-hp-4 { color: var(--h4-color); font-family: var(--h4-font); font-size: var(--h4-size); font-weight: var(--h4-weight); line-height: var(--h4-line-height); }
+.style-settings-markdown .el-hp-5 { color: var(--h5-color); font-family: var(--h5-font); font-size: var(--h5-size); font-weight: var(--h5-weight); line-height: var(--h5-line-height); }
+.style-settings-markdown .el-hp-6 { color: var(--h6-color); font-family: var(--h6-font); font-size: var(--h6-size); font-weight: var(--h6-weight); line-height: var(--h6-line-height); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-1 { text-shadow: var(--el-glow-h1); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-2 { text-shadow: var(--el-glow-h2); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-3 { text-shadow: var(--el-glow-h3); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-4 { text-shadow: var(--el-glow-h4); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-5 { text-shadow: var(--el-glow-h5); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-6 { text-shadow: var(--el-glow-h6); }
+
+/* Ombre gradient headings, as in notes (dark only, H1–H2). */
+body.theme-dark.el-ombre-headings .style-settings-markdown .el-hp-1 { background-image: linear-gradient(90deg, var(--el-ombre-h1-a), var(--el-ombre-h1-b)); }
+body.theme-dark.el-ombre-headings .style-settings-markdown .el-hp-2 { background-image: linear-gradient(90deg, var(--el-ombre-h2-a), var(--el-ombre-h2-b)); }
+body.theme-dark.el-ombre-headings .style-settings-markdown :is(.el-hp-1, .el-hp-2) {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  width: fit-content;
+}

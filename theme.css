@@ -1,4 +1,4 @@
-/* Enough Light 0.0.8 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
+/* Enough Light 0.0.9 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
 
 /* Bundled fonts, embedded below under the SIL Open Font License 1.1 (https://openfontlicense.org).
    Full licence texts: https://github.com/godlen4332/obsidian-enough-light/tree/master/fonts/licenses
@@ -33,6 +33,10 @@ settings:
         value: el-light-sage
       - label: Daylight
         value: el-light-daylight
+  - id: el-light-palette-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-swatches"><span class="el-sw el-sw-honey"><span class="el-sw-name">Honey</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-slate"><span class="el-sw-name">Slate</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-sage"><span class="el-sw-name">Sage</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-daylight"><span class="el-sw-name">Daylight</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span></div>'
   - id: el-dark-palette
     title: Dark palette
     type: class-select
@@ -45,6 +49,10 @@ settings:
         value: el-dark-deepsea
       - label: Ember
         value: el-dark-ember
+  - id: el-dark-palette-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-swatches"><span class="el-sw el-sw-arcane"><span class="el-sw-name">Arcane</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-deepsea"><span class="el-sw-name">Deep Sea</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-ember"><span class="el-sw-name">Ember</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span></div>'
   - id: el-colours
     title: Accent and text colours
     type: heading
@@ -136,6 +144,10 @@ settings:
     type: heading
     level: 1
     collapsed: true
+  - id: el-heading-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-hp"><div class="el-hp-1">Heading 1</div><div class="el-hp-2">Heading 2</div><div class="el-hp-3">Heading 3</div><div class="el-hp-4">Heading 4</div><div class="el-hp-5">Heading 5</div><div class="el-hp-6">Heading 6</div></div>'
   - id: el-h1-heading
     title: H1
     type: heading
@@ -607,6 +619,26 @@ body.theme-dark.el-dark-ember {
   --el-ombre-h2-b: #e88aa0;
 }
 
+.el-sw-honey { --sw-bg: #faf6ec; --sw-text: #3b3226; --sw-border: #e3d8bf; --sw-1: #7a3a10; --sw-2: #7d5608; --sw-3: #4d5c20; --sw-4: #8f6312; }
+.el-sw-slate { --sw-bg: #eef1f4; --sw-text: #22282f; --sw-border: #cfd6de; --sw-1: #1d4a7a; --sw-2: #6a3f8f; --sw-3: #1f6159; --sw-4: #2a63a8; }
+.el-sw-sage { --sw-bg: #f0f3ea; --sw-text: #283026; --sw-border: #d3dac6; --sw-1: #2f5a2a; --sw-2: #8a3f16; --sw-3: #3a4f86; --sw-4: #3d7044; }
+.el-sw-daylight { --sw-bg: #ffffff; --sw-text: #1f2328; --sw-border: #dfe2e7; --sw-1: #08695f; --sw-2: #a3289e; --sw-3: #2559c7; --sw-4: #2559c7; }
+.el-sw-arcane { --sw-bg: #161512; --sw-text: #e6e1d6; --sw-border: #34322c; --sw-1: #5fd3c4; --sw-2: #cf6fd6; --sw-3: #6aa8ff; --sw-4: #4f8ae6; }
+.el-sw-deepsea { --sw-bg: #0c1424; --sw-text: #dde6f2; --sw-border: #24304a; --sw-1: #7cc4ff; --sw-2: #5fd3c4; --sw-3: #b9a8ff; --sw-4: #4a7fd8; }
+.el-sw-ember { --sw-bg: #1f1611; --sw-text: #f0e4d2; --sw-border: #3d2d22; --sw-1: #f2c35b; --sw-2: #f08a4b; --sw-3: #e88aa0; --sw-4: #d08a2a; }
+body.el-light-honey .el-sw-honey,
+body:not(.el-light-slate):not(.el-light-sage):not(.el-light-daylight) .el-sw-honey,
+body.el-light-slate .el-sw-slate,
+body.el-light-sage .el-sw-sage,
+body.el-light-daylight .el-sw-daylight,
+body.el-dark-arcane .el-sw-arcane,
+body:not(.el-dark-deepsea):not(.el-dark-ember) .el-sw-arcane,
+body.el-dark-deepsea .el-sw-deepsea,
+body.el-dark-ember .el-sw-ember {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+}
+
 /* ==========================================================================
    10 · Base — map Obsidian's variables onto the palette (--el-*).
    Palette values are generated from src/palettes.mjs. No colour literals here.
@@ -916,5 +948,80 @@ body.is-phone .callout[data-callout="note-toolbar"] { --cg-nt-item-font-size: 1e
     --metadata-label-text-color: var(--el-text);
     --el-glow-strength: 0;
   }
+}
+
+/* ==========================================================================
+   80 · Style Settings previews (0.0.9) — a row of palette chips under each
+   palette picker, and a live H1–H6 sample at the top of Headings. The HTML
+   comes from src/settings.mjs (info-text, markdown: true); chip colours are
+   generated per palette by scripts/build.mjs (--sw-*). Scoped to
+   .style-settings-markdown so nothing here can reach a note.
+   ========================================================================== */
+.style-settings-markdown .el-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+.style-settings-markdown .el-sw {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 84px;
+  padding: 6px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--sw-border);
+  background: var(--sw-bg);
+  color: var(--sw-text);
+}
+.style-settings-markdown .el-sw-name {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.style-settings-markdown .el-sw-dots { display: flex; gap: 4px; }
+.style-settings-markdown .el-sw-dots > span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.style-settings-markdown .el-sw-dots > span:nth-child(1) { background: var(--sw-1); }
+.style-settings-markdown .el-sw-dots > span:nth-child(2) { background: var(--sw-2); }
+.style-settings-markdown .el-sw-dots > span:nth-child(3) { background: var(--sw-3); }
+.style-settings-markdown .el-sw-dots > span:nth-child(4) { background: var(--sw-4); border-radius: 3px; }
+
+/* Heading sample: note-sized text, so the em sizes match what notes show. */
+.style-settings-markdown .el-hp {
+  margin-top: 4px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--el-border);
+  background: var(--el-bg);
+  font-size: var(--font-text-size);
+}
+.style-settings-markdown .el-hp > div { margin: 0; }
+.style-settings-markdown .el-hp-1 { color: var(--h1-color); font-family: var(--h1-font); font-size: var(--h1-size); font-weight: var(--h1-weight); line-height: var(--h1-line-height); }
+.style-settings-markdown .el-hp-2 { color: var(--h2-color); font-family: var(--h2-font); font-size: var(--h2-size); font-weight: var(--h2-weight); line-height: var(--h2-line-height); }
+.style-settings-markdown .el-hp-3 { color: var(--h3-color); font-family: var(--h3-font); font-size: var(--h3-size); font-weight: var(--h3-weight); line-height: var(--h3-line-height); }
+.style-settings-markdown .el-hp-4 { color: var(--h4-color); font-family: var(--h4-font); font-size: var(--h4-size); font-weight: var(--h4-weight); line-height: var(--h4-line-height); }
+.style-settings-markdown .el-hp-5 { color: var(--h5-color); font-family: var(--h5-font); font-size: var(--h5-size); font-weight: var(--h5-weight); line-height: var(--h5-line-height); }
+.style-settings-markdown .el-hp-6 { color: var(--h6-color); font-family: var(--h6-font); font-size: var(--h6-size); font-weight: var(--h6-weight); line-height: var(--h6-line-height); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-1 { text-shadow: var(--el-glow-h1); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-2 { text-shadow: var(--el-glow-h2); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-3 { text-shadow: var(--el-glow-h3); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-4 { text-shadow: var(--el-glow-h4); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-5 { text-shadow: var(--el-glow-h5); }
+body:not(.el-glow-off) .style-settings-markdown .el-hp-6 { text-shadow: var(--el-glow-h6); }
+
+/* Ombre gradient headings, as in notes (dark only, H1–H2). */
+body.theme-dark.el-ombre-headings .style-settings-markdown .el-hp-1 { background-image: linear-gradient(90deg, var(--el-ombre-h1-a), var(--el-ombre-h1-b)); }
+body.theme-dark.el-ombre-headings .style-settings-markdown .el-hp-2 { background-image: linear-gradient(90deg, var(--el-ombre-h2-a), var(--el-ombre-h2-b)); }
+body.theme-dark.el-ombre-headings .style-settings-markdown :is(.el-hp-1, .el-hp-2) {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  width: fit-content;
 }
 

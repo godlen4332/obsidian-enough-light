@@ -106,3 +106,12 @@ Found and fixed:
 Decided 2026-11-27 (Sean): keep the "CSS larger than recommended" warning. theme.css is ~548 KB, ~500 KB of it
 embedded fonts for the four pairings. The warning does not block install or approval; do not trim pairings for it.
 Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; next steps are scan 0.0.8, then Request review.
+
+## 0.0.9 (2026-11-27): Style Settings previews
+- Under each palette picker: a row of chips, one per palette of that mode (page colour, text, H1–H3 dots, accent square).
+  The palette in use is outlined, in both modes. Chip colours are generated from palettes.mjs (swatchCss in build.mjs).
+- Top of Headings: a live H1–H6 sample reading the same --hN-* variables as notes (colour, size, font, weight, glow, ombre).
+- How: info-text items with markdown: true; Style Settings renders them with Obsidian's Markdown renderer into
+  .style-settings-markdown, so plain HTML with classes comes through. Styles in src/css/80-settings-preview.css,
+  all scoped to .style-settings-markdown. The dropdown list itself is a native menu and cannot be coloured.
+- Checked by rendering the built CSS in headless Chrome (dark, light, and ombre + pairing B + H1 regular).

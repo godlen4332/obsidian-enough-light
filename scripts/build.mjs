@@ -60,6 +60,22 @@ export function paletteCss() {
   }).join('\n\n');
 }
 
+// ---------- Settings swatches: each palette's own colours, for its preview chip ----------
+// The chip shows that palette whatever palette is live, so these are plain
+// classes, not body-scoped. The live palette's chip gets an outline (the
+// default one also when Style Settings has set no class yet).
+export function swatchCss() {
+  const chips = PALETTES.map((p) =>
+    `.el-sw-${p.id} { --sw-bg: ${p.bg}; --sw-text: ${p.text}; --sw-border: ${p.border}; --sw-1: ${p.h1}; --sw-2: ${p.h2}; --sw-3: ${p.h3}; --sw-4: ${p.accent}; }`);
+  const live = PALETTES.map((p) => {
+    const others = PALETTES.filter((o) => o.mode === p.mode && o.id !== p.id).map((o) => `:not(.el-${o.mode}-${o.id})`).join('');
+    const sel = [`body.el-${p.mode}-${p.id} .el-sw-${p.id}`];
+    if (p.isDefault) sel.push(`body${others} .el-sw-${p.id}`);
+    return sel.join(',\n');
+  });
+  return [...chips, `${live.join(',\n')} {\n  outline: 2px solid var(--interactive-accent);\n  outline-offset: 2px;\n}`].join('\n');
+}
+
 // ---------- Fonts: fonts/woff2/<Family>__<weight>__<style>.woff2 ----------
 export function fontFaceCss() {
   const dir = join(ROOT, 'fonts', 'woff2');
@@ -103,6 +119,7 @@ export function buildCss({ fonts = true } = {}) {
     fonts ? fontFaceCss() : '',
     '/* ===== Palettes (generated from src/palettes.mjs) ===== */',
     paletteCss(),
+    swatchCss(),
     layers,
   ].filter(Boolean).join('\n\n') + '\n';
 }
