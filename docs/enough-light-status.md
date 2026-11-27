@@ -102,3 +102,7 @@ Found and fixed:
 - manifest had undocumented `repo` and `screenshot` keys; removed.
 - Four `:not(#el)` ID-specificity tricks removed (guideline: low specificity, let snippets override).
 - New tests: no !important, no ID selectors, no remote url()/@import in built CSS, screenshot 512x288, plain MIT, manifest fields + name rules. CI 43/43 at 639b911; release 0.0.8 published; installed in vault.
+
+Decided 2026-11-27 (Sean): keep the "CSS larger than recommended" warning. theme.css is ~548 KB, ~500 KB of it
+embedded fonts for the four pairings. The warning does not block install or approval; do not trim pairings for it.
+Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; next steps are scan 0.0.8, then Request review.
