@@ -103,6 +103,17 @@ const headingSection = (n) => [
   },
 ];
 
+// Top line of the panel: the installed version (from manifest.json, filled in
+// by the build) plus links, so any device shows which version it has even
+// before Obsidian's theme browser lists the theme (Sean, 0.0.13).
+const REPO = 'https://github.com/godlen4332/obsidian-enough-light';
+export const aboutItem = (version) => ({
+  id: 'el-about',
+  type: 'info-text',
+  markdown: true,
+  description: `Enough Light ${version} · [What's new](${REPO}/releases) · [README](${REPO}#readme)`,
+});
+
 export const SETTINGS = {
   name: 'Enough Light',
   id: 'enough-light',

@@ -134,6 +134,16 @@ Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; nex
   keyed on Style Settings' data-id inside .style-settings-container. Test pins both modes and that each preview
   sits directly after its picker. Headless render checked; Sean to eyeball in the vault.
 
+## 0.0.13 (2026-11-27)
+- Top line of the Style Settings panel: "Enough Light <version> · What's new · README". The theme browser shows
+  version/author/README only for themes on Obsidian's public list; a Sync/BRAT copy shows just the name until
+  then, so this gives every device (Sean's iPhone via Obsidian Sync) the version. The build fills it from
+  manifest.json (aboutItem in settings.mjs), so it can't drift. Test pins it as the first item.
+- Sean's iPhone gets the theme via Obsidian Sync (Themes and snippets on); new releases copied into the Mac
+  vault reach it automatically.
+- Website listing public: https://community.obsidian.md/themes/enough-light (2026-11-27). Not yet in
+  community-css-themes.json (the in-app browser's list), which is mirrored on a schedule.
+
 ## Open (2026-11-27)
 - Dashboard: Sean to press "Check for new releases" (now 0.0.12), then "…" → Request review.
 - Glow trade-off (0.0.11): without the Style Settings plugin, glow is off.

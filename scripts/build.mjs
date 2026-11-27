@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { PALETTES } from '../src/palettes.mjs';
 import { onAccent } from '../src/contrast.mjs';
-import { SETTINGS } from '../src/settings.mjs';
+import { SETTINGS, aboutItem } from '../src/settings.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pkg = JSON.parse(readFileSync(join(ROOT, 'manifest.json'), 'utf8'));
@@ -32,7 +32,7 @@ function yamlItem(obj, indent) {
 }
 export function settingsBlock() {
   // name/id stay unquoted so tools (and our test) can read them plainly.
-  return `/* @settings\nname: ${SETTINGS.name}\nid: ${SETTINGS.id}\nsettings:\n${SETTINGS.settings.map((s) => yamlItem(s, 2)).join('\n')}\n*/`;
+  return `/* @settings\nname: ${SETTINGS.name}\nid: ${SETTINGS.id}\nsettings:\n${[aboutItem(pkg.version), ...SETTINGS.settings].map((s) => yamlItem(s, 2)).join('\n')}\n*/`;
 }
 
 // ---------- Palette variables ----------

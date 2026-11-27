@@ -209,3 +209,13 @@ test('each palette picker and its samples join into one card (0.0.12)', () => {
     assert.equal(ids[ids.indexOf(`el-${mode}-palette`) + 1], `el-${mode}-palette-preview`);
   }
 });
+
+test('the panel opens with the installed version and links (0.0.13)', () => {
+  const { version } = JSON.parse(readFileSync('manifest.json', 'utf8'));
+  const first = settings.split(/\n  - /)[1];
+  assert.match(settings, /^settings:\n  - id: el-about\n/m, 'about line is the first item');
+  assert.match(first, /type: info-text/);
+  assert.match(first, /markdown: true/);
+  assert.ok(first.includes(`Enough Light ${version} · [What''s new](https://github.com/godlen4332/obsidian-enough-light/releases)`), first);
+  assert.ok(first.includes('[README](https://github.com/godlen4332/obsidian-enough-light#readme)'));
+});

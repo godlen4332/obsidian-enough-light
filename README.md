@@ -26,7 +26,7 @@ A calm, legible Obsidian theme. Enough light to read by, nothing more.
   `<your vault>/.obsidian/themes/Enough Light/`, then pick it under Settings → Appearance → Themes.
 
 **Customise it:** install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
-plugin, then Settings → Style Settings → Enough Light. You can set:
+plugin, then Settings → Style Settings → Enough Light. The top line shows the installed version, with links to what's new and this README. You can set:
 
 - the palette, separately for light and dark mode (each picker and its samples of every palette sit in one card, with the one in use ticked);
 - whether to use Obsidian's own accent colour (Settings → Appearance → Accent color) instead of the palette's;
