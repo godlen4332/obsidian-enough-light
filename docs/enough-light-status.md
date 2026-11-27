@@ -158,11 +158,11 @@ Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; nex
   wider than a phone in this theme's wide font. 50-components.css sets overflow-wrap: anywhere on both.
   Proof: mock-up at 360px, old scrollWidth 362 > 360, new 360. Test pins it.
 
-## Open (2026-11-27)
-- Dashboard: Sean to press "Check for new releases" (now 0.0.12), then "…" → Request review.
-- Glow trade-off (0.0.11): without the Style Settings plugin, glow is off.
-- Colour pickers apply only on Save: Style Settings writes the value on Pickr's "save" event (sliders write live).
-  A theme can't change that. Sean (2026-11-27): live with it; no feature request upstream.
-- README reads well on a phone (2026-11-27): Sean saw the iOS theme page (README now shown, theme listed) scroll
-  sideways. Replaced the 4-column palette table and the long-line command block with plain lists. The theme
-  page reads README from the repo, so no release is needed. Not verified on the phone by me.
+## Open (2026-11-27 06:31, at compact)
+- iOS: Obsidian flashed "error while loading" after 0.0.15 synced; Sean couldn't read it. Unknown whether theme or
+  a plugin. Next: Sean force-quits and reopens Obsidian on the iPhone; if it shows again, screen-record or
+  screenshot it. A CSS theme rarely raises a load error (a half-synced theme.css can).
+- Sean to check on iPhone: theme page and Style Settings no longer scroll sideways; top line says 0.0.15.
+- Sean to check on Mac: palette picker + samples read as one card (0.0.12).
+- Decided: colour pickers apply on Save (Style Settings behaviour), live with it. iPhone gets the theme via
+  Obsidian Sync (Themes and snippets on), not BRAT. Size warning accepted.
