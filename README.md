@@ -28,13 +28,13 @@ A calm, legible Obsidian theme. Enough light to read by, nothing more.
 **Customise it:** install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
 plugin, then Settings → Style Settings → Enough Light. You can set:
 
-- the palette, separately for light and dark mode (each picker shows a chip of every palette, with the one in use outlined);
+- the palette, separately for light and dark mode (each picker shows a small sample of every palette, with the one in use ticked);
 - whether to use Obsidian's own accent colour (Settings → Appearance → Accent color) instead of the palette's;
 - colours for bold, italic and highlighted text;
 - the width of the text column (when *Readable line length* is on);
 - heading glow and the dark-mode gradient effects;
 - the font pairing;
-- colour, size, font and weight for each heading level, with a live sample of H1–H6 that updates as you change them.
+- colour, size, font and weight for each heading level, with live samples (all six together, and each level in its own section) that update as you change them.
 
 Without Style Settings you get Honey (light) and Arcane (dark).
 

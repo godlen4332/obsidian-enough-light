@@ -17,7 +17,7 @@ const palettePreview = (mode) => ({
   type: 'info-text',
   markdown: true,
   description: `<div class="el-swatches">${PALETTES.filter((p) => p.mode === mode)
-    .map((p) => `<span class="el-sw el-sw-${p.id}"><span class="el-sw-name">${p.name}</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span>`)
+    .map((p) => `<span class="el-sw el-sw-${p.id}"><span class="el-sw-name">${p.name}</span><span class="el-sw-h1">Heading</span><span class="el-sw-h2">Subheading</span><span class="el-sw-body">Text and <span class="el-sw-link">link</span></span></span>`)
     .join('')}</div>`,
 });
 
@@ -54,6 +54,13 @@ const themedColour = (id, title, key) => ({
 
 const headingSection = (n) => [
   { id: `el-h${n}-heading`, title: `H${n}`, type: 'heading', level: 2, collapsed: true },
+  // This level alone, live, at the top of its own section.
+  {
+    id: `el-h${n}-preview`,
+    type: 'info-text',
+    markdown: true,
+    description: `<div class="el-hp el-hp-solo"><div class="el-hp-${n}">Heading ${n} sample</div></div>`,
+  },
   {
     id: `el-h${n}-custom`,
     title: `H${n} colour`,

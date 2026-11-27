@@ -143,10 +143,13 @@ test("every chip carries its own palette's colours, and the live palette gets an
     const rule = css.match(new RegExp(`\\.el-sw-${p.id} \\{([^}]*)\\}`))?.[1] ?? '';
     assert.match(rule, new RegExp(`--sw-bg: ${p.bg};`), p.id);
     assert.match(rule, new RegExp(`--sw-text: ${p.text};`), p.id);
-    assert.match(rule, new RegExp(`--sw-1: ${p.h1};`), p.id);
-    assert.match(rule, new RegExp(`--sw-4: ${p.accent};`), p.id);
+    assert.match(rule, new RegExp(`--sw-h1: ${p.h1};`), p.id);
+    assert.match(rule, new RegExp(`--sw-h2: ${p.h2};`), p.id);
+    assert.match(rule, new RegExp(`--sw-link: ${p.link};`), p.id);
     assert.ok(css.includes(`body.el-${p.mode}-${p.id} .el-sw-${p.id}`), `live outline for ${p.id}`);
   }
+  // The live chip is marked with a tick, not only by its frame.
+  assert.match(css, /\.el-sw-honey \.el-sw-name::before[^{]*\{[^}]*content: "✓ "/);
   // No class set yet: the default palette's chip is the live one.
   assert.match(css, /body:not\(\.el-light-slate\)[^{]*\.el-sw-honey/);
 });
@@ -168,8 +171,19 @@ test('preview styles are scoped to the settings panel, never notes', () => {
     for (const sel of m[1].replace(/:is\([^)]*\)/g, ':is(…)').split(',')) {
       const s = sel.trim();
       if (/^\.el-sw-[a-z]+$/.test(s)) continue; // the variable-only chip rules
-      if (/^body[^ ]* \.el-sw-[a-z]+$/.test(s)) continue; // live-palette outline
+      if (/^body[^ ]* \.el-sw-[a-z]+( \.el-sw-name(::before)?)?$/.test(s)) continue; // live-palette frame + tick
       assert.ok(s.includes('.style-settings-markdown'), `unscoped preview rule: ${s}`);
     }
+  }
+});
+
+test('each heading section opens with a live sample of just that level', () => {
+  for (let n = 1; n <= 6; n++) {
+    const at = settings.indexOf(`id: el-h${n}-preview\n`);
+    assert.ok(at > settings.indexOf(`id: el-h${n}-heading\n`), `H${n} sample after its heading`);
+    assert.ok(at < settings.indexOf(`id: el-h${n}-custom\n`), `H${n} sample before its colour setting`);
+    const block = settings.slice(at, settings.indexOf('\n  - ', at));
+    assert.match(block, new RegExp(`el-hp-${n}">`));
+    for (let m = 1; m <= 6; m++) if (m !== n) assert.doesNotMatch(block, new RegExp(`el-hp-${m}"`), `H${n} sample shows only H${n}`);
   }
 });

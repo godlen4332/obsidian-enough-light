@@ -115,3 +115,10 @@ Public listing: not in community-css-themes.json as of 2026-11-27 08:25 UTC; nex
   .style-settings-markdown, so plain HTML with classes comes through. Styles in src/css/80-settings-preview.css,
   all scoped to .style-settings-markdown. The dropdown list itself is a native menu and cannot be coloured.
 - Checked by rendering the built CSS in headless Chrome (dark, light, and ombre + pairing B + H1 regular).
+
+## 0.0.10 (2026-11-27): previews Sean can read
+- Sean: dot chips were too small to interpret. Chips are now tiny pages in that palette: name, "Heading" (H1 colour),
+  "Subheading" (H2), "Text and link" (text + link colours), 14–18px, in a grid that fills the row.
+  The palette in use gets an inset frame (an outline was clipped by the settings row) and "✓ Name" in bold.
+- Sean: wants a live sample inside each heading section too. Each H section now opens with "Heading N sample",
+  styled by that level's settings; the all-levels panel at the top of Headings stays.

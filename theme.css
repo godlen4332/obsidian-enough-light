@@ -1,4 +1,4 @@
-/* Enough Light 0.0.9 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
+/* Enough Light 0.0.10 — a calm, legible Obsidian theme. Built file: edit src/, not this. */
 
 /* Bundled fonts, embedded below under the SIL Open Font License 1.1 (https://openfontlicense.org).
    Full licence texts: https://github.com/godlen4332/obsidian-enough-light/tree/master/fonts/licenses
@@ -36,7 +36,7 @@ settings:
   - id: el-light-palette-preview
     type: info-text
     markdown: true
-    description: '<div class="el-swatches"><span class="el-sw el-sw-honey"><span class="el-sw-name">Honey</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-slate"><span class="el-sw-name">Slate</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-sage"><span class="el-sw-name">Sage</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-daylight"><span class="el-sw-name">Daylight</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span></div>'
+    description: '<div class="el-swatches"><span class="el-sw el-sw-honey"><span class="el-sw-name">Honey</span><span class="el-sw-h1">Heading</span><span class="el-sw-h2">Subheading</span><span class="el-sw-body">Text and <span class="el-sw-link">link</span></span></span><span class="el-sw el-sw-slate"><span class="el-sw-name">Slate</span><span class="el-sw-h1">Heading</span><span class="el-sw-h2">Subheading</span><span class="el-sw-body">Text and <span class="el-sw-link">link</span></span></span><span class="el-sw el-sw-sage"><span class="el-sw-name">Sage</span><span class="el-sw-h1">Heading</span><span class="el-sw-h2">Subheading</span><span class="el-sw-body">Text and <span class="el-sw-link">link</span></span></span><span class="el-sw el-sw-daylight"><span class="el-sw-name">Daylight</span><span class="el-sw-h1">Heading</span><span class="el-sw-h2">Subheading</span><span class="el-sw-body">Text and <span class="el-sw-link">link</span></span></span></div>'
   - id: el-dark-palette
     title: Dark palette
     type: class-select
@@ -52,7 +52,7 @@ settings:
   - id: el-dark-palette-preview
     type: info-text
     markdown: true
-    description: '<div class="el-swatches"><span class="el-sw el-sw-arcane"><span class="el-sw-name">Arcane</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-deepsea"><span class="el-sw-name">Deep Sea</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span><span class="el-sw el-sw-ember"><span class="el-sw-name">Ember</span><span class="el-sw-dots"><span></span><span></span><span></span><span></span></span></span></div>'
+    description: '<div class="el-swatches"><span class="el-sw el-sw-arcane"><span class="el-sw-name">Arcane</span><span class="el-sw-h1">Heading</span><span class="el-sw-h2">Subheading</span><span class="el-sw-body">Text and <span class="el-sw-link">link</span></span></span><span class="el-sw el-sw-deepsea"><span class="el-sw-name">Deep Sea</span><span class="el-sw-h1">Heading</span><span class="el-sw-h2">Subheading</span><span class="el-sw-body">Text and <span class="el-sw-link">link</span></span></span><span class="el-sw el-sw-ember"><span class="el-sw-name">Ember</span><span class="el-sw-h1">Heading</span><span class="el-sw-h2">Subheading</span><span class="el-sw-body">Text and <span class="el-sw-link">link</span></span></span></div>'
   - id: el-colours
     title: Accent and text colours
     type: heading
@@ -153,6 +153,10 @@ settings:
     type: heading
     level: 2
     collapsed: true
+  - id: el-h1-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-hp el-hp-solo"><div class="el-hp-1">Heading 1 sample</div></div>'
   - id: el-h1-custom
     title: H1 colour
     description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
@@ -192,6 +196,10 @@ settings:
     type: heading
     level: 2
     collapsed: true
+  - id: el-h2-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-hp el-hp-solo"><div class="el-hp-2">Heading 2 sample</div></div>'
   - id: el-h2-custom
     title: H2 colour
     description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
@@ -231,6 +239,10 @@ settings:
     type: heading
     level: 2
     collapsed: true
+  - id: el-h3-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-hp el-hp-solo"><div class="el-hp-3">Heading 3 sample</div></div>'
   - id: el-h3-custom
     title: H3 colour
     description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
@@ -270,6 +282,10 @@ settings:
     type: heading
     level: 2
     collapsed: true
+  - id: el-h4-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-hp el-hp-solo"><div class="el-hp-4">Heading 4 sample</div></div>'
   - id: el-h4-custom
     title: H4 colour
     description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
@@ -309,6 +325,10 @@ settings:
     type: heading
     level: 2
     collapsed: true
+  - id: el-h5-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-hp el-hp-solo"><div class="el-hp-5">Heading 5 sample</div></div>'
   - id: el-h5-custom
     title: H5 colour
     description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
@@ -348,6 +368,10 @@ settings:
     type: heading
     level: 2
     collapsed: true
+  - id: el-h6-preview
+    type: info-text
+    markdown: true
+    description: '<div class="el-hp el-hp-solo"><div class="el-hp-6">Heading 6 sample</div></div>'
   - id: el-h6-custom
     title: H6 colour
     description: Leave untouched to follow the palette; reset to go back to it. A custom colour is not contrast-checked.
@@ -619,13 +643,13 @@ body.theme-dark.el-dark-ember {
   --el-ombre-h2-b: #e88aa0;
 }
 
-.el-sw-honey { --sw-bg: #faf6ec; --sw-text: #3b3226; --sw-border: #e3d8bf; --sw-1: #7a3a10; --sw-2: #7d5608; --sw-3: #4d5c20; --sw-4: #8f6312; }
-.el-sw-slate { --sw-bg: #eef1f4; --sw-text: #22282f; --sw-border: #cfd6de; --sw-1: #1d4a7a; --sw-2: #6a3f8f; --sw-3: #1f6159; --sw-4: #2a63a8; }
-.el-sw-sage { --sw-bg: #f0f3ea; --sw-text: #283026; --sw-border: #d3dac6; --sw-1: #2f5a2a; --sw-2: #8a3f16; --sw-3: #3a4f86; --sw-4: #3d7044; }
-.el-sw-daylight { --sw-bg: #ffffff; --sw-text: #1f2328; --sw-border: #dfe2e7; --sw-1: #08695f; --sw-2: #a3289e; --sw-3: #2559c7; --sw-4: #2559c7; }
-.el-sw-arcane { --sw-bg: #161512; --sw-text: #e6e1d6; --sw-border: #34322c; --sw-1: #5fd3c4; --sw-2: #cf6fd6; --sw-3: #6aa8ff; --sw-4: #4f8ae6; }
-.el-sw-deepsea { --sw-bg: #0c1424; --sw-text: #dde6f2; --sw-border: #24304a; --sw-1: #7cc4ff; --sw-2: #5fd3c4; --sw-3: #b9a8ff; --sw-4: #4a7fd8; }
-.el-sw-ember { --sw-bg: #1f1611; --sw-text: #f0e4d2; --sw-border: #3d2d22; --sw-1: #f2c35b; --sw-2: #f08a4b; --sw-3: #e88aa0; --sw-4: #d08a2a; }
+.el-sw-honey { --sw-bg: #faf6ec; --sw-text: #3b3226; --sw-muted: #6b5f4c; --sw-border: #e3d8bf; --sw-h1: #7a3a10; --sw-h2: #7d5608; --sw-link: #9a4a18; }
+.el-sw-slate { --sw-bg: #eef1f4; --sw-text: #22282f; --sw-muted: #545e6a; --sw-border: #cfd6de; --sw-h1: #1d4a7a; --sw-h2: #6a3f8f; --sw-link: #1d5b96; }
+.el-sw-sage { --sw-bg: #f0f3ea; --sw-text: #283026; --sw-muted: #556050; --sw-border: #d3dac6; --sw-h1: #2f5a2a; --sw-h2: #8a3f16; --sw-link: #2f6a4a; }
+.el-sw-daylight { --sw-bg: #ffffff; --sw-text: #1f2328; --sw-muted: #59606b; --sw-border: #dfe2e7; --sw-h1: #08695f; --sw-h2: #a3289e; --sw-link: #2559c7; }
+.el-sw-arcane { --sw-bg: #161512; --sw-text: #e6e1d6; --sw-muted: #a8a296; --sw-border: #34322c; --sw-h1: #5fd3c4; --sw-h2: #cf6fd6; --sw-link: #6aa8ff; }
+.el-sw-deepsea { --sw-bg: #0c1424; --sw-text: #dde6f2; --sw-muted: #9aa8bf; --sw-border: #24304a; --sw-h1: #7cc4ff; --sw-h2: #5fd3c4; --sw-link: #7cc4ff; }
+.el-sw-ember { --sw-bg: #1f1611; --sw-text: #f0e4d2; --sw-muted: #b5a490; --sw-border: #3d2d22; --sw-h1: #f2c35b; --sw-h2: #f08a4b; --sw-link: #f5b15f; }
 body.el-light-honey .el-sw-honey,
 body:not(.el-light-slate):not(.el-light-sage):not(.el-light-daylight) .el-sw-honey,
 body.el-light-slate .el-sw-slate,
@@ -635,8 +659,30 @@ body.el-dark-arcane .el-sw-arcane,
 body:not(.el-dark-deepsea):not(.el-dark-ember) .el-sw-arcane,
 body.el-dark-deepsea .el-sw-deepsea,
 body.el-dark-ember .el-sw-ember {
-  outline: 2px solid var(--interactive-accent);
-  outline-offset: 2px;
+  box-shadow: inset 0 0 0 2px var(--interactive-accent);
+}
+body.el-light-honey .el-sw-honey .el-sw-name,
+body:not(.el-light-slate):not(.el-light-sage):not(.el-light-daylight) .el-sw-honey .el-sw-name,
+body.el-light-slate .el-sw-slate .el-sw-name,
+body.el-light-sage .el-sw-sage .el-sw-name,
+body.el-light-daylight .el-sw-daylight .el-sw-name,
+body.el-dark-arcane .el-sw-arcane .el-sw-name,
+body:not(.el-dark-deepsea):not(.el-dark-ember) .el-sw-arcane .el-sw-name,
+body.el-dark-deepsea .el-sw-deepsea .el-sw-name,
+body.el-dark-ember .el-sw-ember .el-sw-name {
+  font-weight: 700;
+  color: var(--sw-text);
+}
+body.el-light-honey .el-sw-honey .el-sw-name::before,
+body:not(.el-light-slate):not(.el-light-sage):not(.el-light-daylight) .el-sw-honey .el-sw-name::before,
+body.el-light-slate .el-sw-slate .el-sw-name::before,
+body.el-light-sage .el-sw-sage .el-sw-name::before,
+body.el-light-daylight .el-sw-daylight .el-sw-name::before,
+body.el-dark-arcane .el-sw-arcane .el-sw-name::before,
+body:not(.el-dark-deepsea):not(.el-dark-ember) .el-sw-arcane .el-sw-name::before,
+body.el-dark-deepsea .el-sw-deepsea .el-sw-name::before,
+body.el-dark-ember .el-sw-ember .el-sw-name::before {
+  content: "✓ ";
 }
 
 /* ==========================================================================
@@ -952,43 +998,36 @@ body.is-phone .callout[data-callout="note-toolbar"] { --cg-nt-item-font-size: 1e
 
 /* ==========================================================================
    80 · Style Settings previews (0.0.9) — a row of palette chips under each
-   palette picker, and a live H1–H6 sample at the top of Headings. The HTML
+   palette picker (each a tiny page: name, H1, H2, body, link), and a live H1–H6 sample at the top of Headings. The HTML
    comes from src/settings.mjs (info-text, markdown: true); chip colours are
    generated per palette by scripts/build.mjs (--sw-*). Scoped to
    .style-settings-markdown so nothing here can reach a note.
    ========================================================================== */
 .style-settings-markdown .el-swatches {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 2px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+  max-width: 760px;
 }
+/* Each chip is a tiny page in that palette: name, H1, H2, body text, link. */
 .style-settings-markdown .el-sw {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  gap: 5px;
-  min-width: 84px;
-  padding: 6px 9px;
-  border-radius: 6px;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 8px;
   border: 1px solid var(--sw-border);
   background: var(--sw-bg);
   color: var(--sw-text);
+  font-family: var(--el-font-body, inherit);
+  line-height: 1.3;
 }
-.style-settings-markdown .el-sw-name {
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-.style-settings-markdown .el-sw-dots { display: flex; gap: 4px; }
-.style-settings-markdown .el-sw-dots > span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-.style-settings-markdown .el-sw-dots > span:nth-child(1) { background: var(--sw-1); }
-.style-settings-markdown .el-sw-dots > span:nth-child(2) { background: var(--sw-2); }
-.style-settings-markdown .el-sw-dots > span:nth-child(3) { background: var(--sw-3); }
-.style-settings-markdown .el-sw-dots > span:nth-child(4) { background: var(--sw-4); border-radius: 3px; }
+.style-settings-markdown .el-sw-name { font-size: 13px; color: var(--sw-muted); margin-bottom: 4px; }
+.style-settings-markdown .el-sw-h1 { font-family: var(--el-font-heading, inherit); font-size: 18px; font-weight: 800; color: var(--sw-h1); }
+.style-settings-markdown .el-sw-h2 { font-family: var(--el-font-heading, inherit); font-size: 15px; font-weight: 700; color: var(--sw-h2); }
+.style-settings-markdown .el-sw-body { font-size: 14px; color: var(--sw-text); }
+.style-settings-markdown .el-sw-link { color: var(--sw-link); text-decoration: underline; }
 
 /* Heading sample: note-sized text, so the em sizes match what notes show. */
 .style-settings-markdown .el-hp {
@@ -1024,4 +1063,7 @@ body.theme-dark.el-ombre-headings .style-settings-markdown :is(.el-hp-1, .el-hp-
   text-shadow: none;
   width: fit-content;
 }
+
+/* One-level sample inside each H section: a single line, same styling. */
+.style-settings-markdown .el-hp-solo { padding: 8px 14px; }
 

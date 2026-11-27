@@ -66,14 +66,22 @@ export function paletteCss() {
 // default one also when Style Settings has set no class yet).
 export function swatchCss() {
   const chips = PALETTES.map((p) =>
-    `.el-sw-${p.id} { --sw-bg: ${p.bg}; --sw-text: ${p.text}; --sw-border: ${p.border}; --sw-1: ${p.h1}; --sw-2: ${p.h2}; --sw-3: ${p.h3}; --sw-4: ${p.accent}; }`);
+    `.el-sw-${p.id} { --sw-bg: ${p.bg}; --sw-text: ${p.text}; --sw-muted: ${p.muted}; --sw-border: ${p.border}; --sw-h1: ${p.h1}; --sw-h2: ${p.h2}; --sw-link: ${p.link}; }`);
   const live = PALETTES.map((p) => {
     const others = PALETTES.filter((o) => o.mode === p.mode && o.id !== p.id).map((o) => `:not(.el-${o.mode}-${o.id})`).join('');
     const sel = [`body.el-${p.mode}-${p.id} .el-sw-${p.id}`];
     if (p.isDefault) sel.push(`body${others} .el-sw-${p.id}`);
     return sel.join(',\n');
   });
-  return [...chips, `${live.join(',\n')} {\n  outline: 2px solid var(--interactive-accent);\n  outline-offset: 2px;\n}`].join('\n');
+  // Inset frame (an outline gets clipped by the settings row) plus a tick and
+  // bold name, so the live palette is marked in words, not just colour.
+  const sels = live.join(',\n');
+  const name = live.flatMap((l) => l.split(',\n')).map((x) => `${x} .el-sw-name`).join(',\n');
+  return [...chips,
+    `${sels} {\n  box-shadow: inset 0 0 0 2px var(--interactive-accent);\n}`,
+    `${name} {\n  font-weight: 700;\n  color: var(--sw-text);\n}`,
+    `${name.replace(/ \.el-sw-name/g, ' .el-sw-name::before')} {\n  content: "✓ ";\n}`,
+  ].join('\n');
 }
 
 // ---------- Fonts: fonts/woff2/<Family>__<weight>__<style>.woff2 ----------
