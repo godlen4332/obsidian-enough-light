@@ -197,3 +197,15 @@ test("heading glow is a switch named 'Heading glow', on by default (Sean, 0.0.11
   assert.doesNotMatch(css, /el-glow-off/, 'old inverted switch is gone');
   assert.match(css, /body\.el-glow \.markdown-rendered h1/);
 });
+
+test('each palette picker and its samples join into one card (0.0.12)', () => {
+  for (const mode of ['light', 'dark']) {
+    const picker = new RegExp(`\\.style-settings-container \\.setting-item:is\\([^)]*\\[data-id="el-${mode}-palette"\\][^)]*\\) \\{[^}]*margin-bottom: 0;[^}]*border-bottom: none;`);
+    const preview = new RegExp(`\\.style-settings-container \\.setting-item:is\\([^)]*\\[data-id="el-${mode}-palette-preview"\\][^)]*\\) \\{[^}]*border-top: none;`);
+    assert.match(css, picker, `${mode} picker drops its bottom edge`);
+    assert.match(css, preview, `${mode} samples drop their top edge`);
+    // The preview must directly follow its picker, or the join opens a gap.
+    const ids = [...settings.matchAll(/^  - id: (\S+)/gm)].map((m) => m[1]);
+    assert.equal(ids[ids.indexOf(`el-${mode}-palette`) + 1], `el-${mode}-palette-preview`);
+  }
+});

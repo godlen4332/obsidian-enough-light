@@ -1067,3 +1067,24 @@ body.theme-dark.el-ombre-headings .style-settings-markdown :is(.el-hp-1, .el-hp-
 /* One-level sample inside each H section: a single line, same styling. */
 .style-settings-markdown .el-hp-solo { padding: 8px 14px; }
 
+/* 0.0.12 · Palette picker + its samples read as ONE card (Sean, option 1).
+   Obsidian draws every setting as its own card (.setting-item: border,
+   radius, margin-bottom). Here the picker drops its bottom edge and gap and
+   the sample row below drops its top edge, so the two join. Keyed on the
+   data-id Style Settings puts on each setting, inside its own container. */
+.style-settings-container .setting-item:is([data-id="el-light-palette"], [data-id="el-dark-palette"]) {
+  margin-bottom: 0;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.style-settings-container .setting-item:is([data-id="el-light-palette-preview"], [data-id="el-dark-palette-preview"]) {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-top: 0;
+}
+.style-settings-container .setting-item:is([data-id="el-light-palette-preview"], [data-id="el-dark-palette-preview"])::before {
+  content: none;
+}
+
