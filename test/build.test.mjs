@@ -162,7 +162,8 @@ test('heading preview sits first under Headings and reads the same variables as 
 });
 
 test('preview styles are scoped to the settings panel, never notes', () => {
-  for (const m of css.matchAll(/([^{}]*\.el-(?:sw|hp|swatches)[^{}]*)\{/g)) {
+  const bare = css.replace(/\/\*[\s\S]*?\*\//g, ''); // comments are not selectors
+  for (const m of bare.matchAll(/([^{}]*\.el-(?:sw|hp|swatches)[^{}]*)\{/g)) {
     for (const sel of m[1].split(',')) {
       const s = sel.trim();
       if (/^\.el-sw-[a-z]+$/.test(s)) continue; // the variable-only chip rules
